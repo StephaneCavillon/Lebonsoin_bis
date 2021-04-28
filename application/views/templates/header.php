@@ -11,7 +11,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
 		integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-	<link rel="stylesheet" href="../assets/css/styles.css">
+	<link rel="stylesheet" href="assets/css/styles.css">
 	<title>Le Mauvais Coin</title>
 </head>
 
@@ -21,10 +21,10 @@
 		<!-- Barre de menu -->
 
 
-		<nav class="navbar navbar-expand-lg navbar-light bg-light mb-5 shadow">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light mb-5 shadow fixed">
 			<div class="container">
 				<a class="navbar-brand" href="#">
-					<img src="../assets/img/logos/logomauvaiscoin.png" width="130" height="20" alt="Logo">
+					<img src="assets/img/logos/logomauvaiscoin.png" width="130" height="20" alt="Logo">
 				</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse"
 					data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
