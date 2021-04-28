@@ -33,7 +33,7 @@
 				<div class="col-xs-12 col-sm-6 col-md-3">
 					<div class="widget no-box">
 						<h5 class="widget-title">Commencer<span></span></h5>
-						<p>Déposer une annonce en quelques clicks!.</p>
+						<p>Déposer une annonce en quelques cliques!</p>
 						<a class="btn btn-footer" href="#." target="_blank">Déposer une annonce</a>
 					</div>
 				</div>

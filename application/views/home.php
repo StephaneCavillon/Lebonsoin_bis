@@ -6,92 +6,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <div class="container">
 
-<div class="row mb-4">
-	<div class="col">
-		<div class="card shadow">
-			<img src="assets/upload/1.jpg" class="card-img-top" alt="...">
-			<div class="card-body">
-				<h5 class="card-title article-title">Peugeot 206</h5>
-				<p class="card-text price">2000€</p>
-				<a href="#" class="btn btn-primary">Voir</a>
-			</div>
-		</div>
-	</div>
-	<div class="col">
-		<div class="card shadow">
-			<img src="assets/upload/1.jpg" class="card-img-top" alt="...">
-			<div class="card-body">
-				<h5 class="card-title article-title">Peugeot 206</h5>
-				<p class="card-text price">2000€</p>
-				<a href="#" class="btn btn-primary">Voir</a>
-			</div>
-		</div>
-	</div>
-	<div class="col">
-		<div class="card shadow">
-			<img src="assets/upload/1.jpg" class="card-img-top" alt="...">
-			<div class="card-body">
-				<h5 class="card-title article-title">Peugeot 206</h5>
-				<p class="card-text price">2000€</p>
-				<a href="#" class="btn btn-primary">Voir</a>
-			</div>
-		</div>
-	</div>
-	<div class="col">
-		<div class="card shadow">
-			<img src="assets/upload/1.jpg" class="card-img-top" alt="...">
-			<div class="card-body">
-				<h5 class="card-title article-title">Peugeot 206</h5>
-				<p class="card-text price">2000€</p>
-				<a href="#" class="btn btn-primary">Voir</a>
-			</div>
-		</div>
-	</div>
-</div>
+<h1 class="text-center mb-5">Bienvenue sur Le Mauvais Coin</h1>
 
-<div class="row mb-4">
-	<div class="col">
-		<div class="card shadow">
-			<img src="assets/upload/1.jpg" class="card-img-top" alt="...">
-			<div class="card-body">
-				<h5 class="card-title article-title">Peugeot 206</h5>
-				<p class="card-text price">2000€</p>
-				<a href="#" class="btn btn-primary">Voir</a>
-			</div>
-		</div>
-	</div>
-	<div class="col">
-		<div class="card shadow">
-			<img src="assets/upload/1.jpg" class="card-img-top" alt="...">
-			<div class="card-body">
-				<h5 class="card-title article-title">Peugeot 206</h5>
-				<p class="card-text price">2000€</p>
-				<a href="#" class="btn btn-primary">Voir</a>
-			</div>
-		</div>
-	</div>
-	<div class="col">
-		<div class="card shadow">
-			<img src="assets/upload/1.jpg" class="card-img-top" alt="...">
-			<div class="card-body">
-				<h5 class="card-title article-title">Peugeot 206</h5>
-				<p class="card-text price">2000€</p>
-				<a href="#" class="btn btn-primary">Voir</a>
-			</div>
-		</div>
-	</div>
-	<div class="col">
-		<div class="card shadow">
-			<img src="assets/upload/1.jpg" class="card-img-top" alt="...">
-			<div class="card-body">
-				<h5 class="card-title article-title">Peugeot 206</h5>
-				<p class="card-text price">2000€</p>
-				<a href="#" class="btn btn-primary">Voir</a>
-			</div>
-		</div>
-	</div>
-</div>
+	<div class="container">
+	
+		<div class="row mb-5">
 
+		<?php foreach($articles as $article): ?>
 
+			<div class="col">
+				<div class="card shadow">
+					<img src="assets/upload/<?=$article->name_img ?? ''?>" class="card-img-top" width="'100%" height="200px" alt="<?=$article->title ?? ''?>">
+					<div class="card-body">
+						<h5 class="card-title article-title"><?=$article->title ?? ''?></h5>
+						<p class="card-text price"><?=$article->price ?? ''?> €</p>
+						<a href="#" class="btn btn-primary">Voir</a>
+					</div>
+				</div>
+			</div>
+
+		<?php endforeach ?>
+			
+		</div>
+
+	</div>
 
 </div>
