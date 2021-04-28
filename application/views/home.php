@@ -20,7 +20,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<div class="card-body">
 						<h5 class="card-title article-title"><?=$article->title ?? ''?></h5>
 						<p class="card-text price"><?=$article->price ?? ''?> €</p>
-						<a href="#" class="btn btn-primary">Voir</a>
+						<div class="card-footer">
+							<a href="#" class="btn btn-primary">Voir</a>
+						</div>
 					</div>
 				</div>
 			</div>
