@@ -16,7 +16,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 			<div class="col">
 				<div class="card shadow">
-					<img src="assets/upload/<?=$article->name_img ?? ''?>" class="card-img-top" width="'100%" height="200px" alt="<?=$article->title ?? ''?>">
+					<img src="<?= base_url('assets/upload/').$article->name_img ?? ''?>" class="card-img-top" width="'100%" height="200px" alt="<?=$article->title ?? ''?>">
 					<div class="card-body">
 						<h5 class="card-title article-title"><?=$article->title ?? ''?></h5>
 						<p class="card-text price"><?=$article->price ?? ''?> €</p>
