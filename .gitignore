@@ -30,5 +30,7 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 /tests/tests/
 /tests/results/
 
-# My FILES
+## File Ignored
 BDD/
+application/config/config.php
+application/config/database.php
