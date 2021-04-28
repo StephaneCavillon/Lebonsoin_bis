@@ -1,0 +1,70 @@
+:root {
+    --bdazzled-blue: #34568bff;
+    --honeydew: #edffecff;
+    --light-green: #61e786ff;
+    --pine-tree: #1f271bff;
+    --burnt-sienna: #ee6c4dff;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: #FFF;
+    font-family: 'Heebo', Tahoma, Verdana, sans-serif;
+}
+
+.btn-success {
+    background-color: var(--bdazzled-blue);
+    border-color: var(--bdazzled-blue);
+    border-radius: 2px;
+}
+
+.btn-success:hover {
+    color: var(--bdazzled-blue);
+    background-color: #FFF;
+    border-color: var(--bdazzled-blue);
+}
+
+.btn-outline-success {
+    color: var(--pine-tree);
+    border: none;
+}
+
+.btn-outline-success:hover {
+    border: none;
+    background-color: #FFF;
+    color: var(--bdazzled-blue);
+}
+
+.btn-success:active, .btn-success:focus {
+    background-color: var(--bdazzled-blue)!important;
+    border-color: var(--bdazzled-blue)!important;
+    box-shadow: 0 0 0 0.2rem rgb(52 86 139 / 50%)
+}
+
+.login-link {
+    color: var(--pine-tree)!important;
+}
+
+.login-link:hover {
+    color: var(--bdazzled-blue)!important;
+}
+
+.navbar-light, .bg-light {
+    background-color: #FFF;
+}
+
+.form-control {
+    border-color: var(--bdazzled-blue);
+    border-radius: 2px;
+}
+
+.btn-primary {
+    background-color: var(--light-green);
+    border-color: var(--light-green);
+    border-radius: 2px;
+}
+
+.card {
+    border-radius: 2px;
+}
