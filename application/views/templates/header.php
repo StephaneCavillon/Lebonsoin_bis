@@ -21,7 +21,7 @@
 		<!-- Barre de menu -->
 
 
-		<nav class="navbar navbar-expand-lg navbar-light bg-light mb-5 shadow fixed">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light mb-5 shadow fixed-top">
 			<div class="container">
 				<a class="navbar-brand" href="#">
 					<img src="assets/img/logos/logomauvaiscoin.png" width="130" height="20" alt="Logo">
