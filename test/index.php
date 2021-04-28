@@ -16,7 +16,7 @@
 </head>
 
 <body>
-	<div class="container-fluid">
+	<div class="container-fluid p-0">
 
 		<!-- Barre de menu -->
 
@@ -61,6 +61,7 @@
 
 		<div class="container">
 
+            <div class="container mb-5">
 			<div class="row">
 				<div class="col">
 					<div class="card shadow">
@@ -103,6 +104,52 @@
 					</div>
 				</div>
 			</div>
+            </div>
+
+            <div class="container mb-5">
+            <div class="row">
+				<div class="col">
+					<div class="card shadow">
+						<img src="../assets/upload/1.jpg" class="card-img-top" alt="...">
+						<div class="card-body">
+							<h5 class="card-title article-title">Peugeot 206</h5>
+							<p class="card-text price">2000€</p>
+							<a href="#" class="btn btn-primary">Voir</a>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="card shadow">
+						<img src="../assets/upload/1.jpg" class="card-img-top" alt="...">
+						<div class="card-body">
+							<h5 class="card-title article-title">Peugeot 206</h5>
+							<p class="card-text price">2000€</p>
+							<a href="#" class="btn btn-primary">Voir</a>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="card shadow">
+						<img src="../assets/upload/1.jpg" class="card-img-top" alt="...">
+						<div class="card-body">
+							<h5 class="card-title article-title">Peugeot 206</h5>
+							<p class="card-text price">2000€</p>
+							<a href="#" class="btn btn-primary">Voir</a>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="card shadow">
+						<img src="../assets/upload/1.jpg" class="card-img-top" alt="...">
+						<div class="card-body">
+							<h5 class="card-title article-title">Peugeot 206</h5>
+							<p class="card-text price">2000€</p>
+							<a href="#" class="btn btn-primary">Voir</a>
+						</div>
+					</div>
+				</div>
+			</div>
+            </div>
 
 
 
