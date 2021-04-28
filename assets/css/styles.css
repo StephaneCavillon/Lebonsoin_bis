@@ -16,6 +16,22 @@ html {
 	font-family: 'Heebo', Tahoma, Verdana, sans-serif;
 }
 
+/* Scrollbar */
+
+::-webkit-scrollbar-track {
+    background-color: #FFF;
+}
+
+::-webkit-scrollbar {
+    height: 6px;
+    background-color: #FFF;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--bdazzled-blue);
+    border-radius: 0;
+}
+
 
 /* BOUTONS */
 
