@@ -308,6 +308,7 @@ ul.social-footer2 li a {
 .btn-footer {
 	background-color: var(--burnt-sienna);
 	color: #fff;
+    border-radius: 2px;
 }
 
 .btn-footer:hover,
