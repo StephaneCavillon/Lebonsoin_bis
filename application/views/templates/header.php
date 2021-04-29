@@ -39,12 +39,12 @@
 									class="far fa-plus-square"></i>
 								Déposer une annonce</button>
 						</li>
-						<form class="form-inline ml-3 my-2 my-lg-0">
+						<!-- <form class="form-inline ml-3 my-2 my-lg-0">
 							<input class="form-control mr-sm-2 form-control-sm" type="search" placeholder="Rechercher"
 								aria-label="Search">
 							<button class="btn btn-outline-success my-2 my-sm-0 btn-sm" type="submit"><i
 									class="fas fa-search"></i></button>
-						</form>
+						</form> -->
 					</ul>
 					<?php if(empty($_SESSION['pseudo'])){  ?>
 					<ul class="navbar-nav">
@@ -55,7 +55,7 @@
 					<?php }else{?>
 						<ul class="navbar-nav">
 							<li class="nav-item">
-								<a class="login-link nav-link " href="<?=base_url('index.php/user_controller/view_user')?>"><img src="<?=base_url('assets/img/user.png')?>" alt=""><?= $_SESSION['pseudo'] ?></a>
+								<a class="login-link nav-link " href="<?=base_url('index.php/user_controller/view_user')?>"><img src="<?=base_url('assets/img/user.png')?>" alt="Avatar"> <?= $_SESSION['pseudo'] ?></a>
 							</li>
 						</ul>
 						

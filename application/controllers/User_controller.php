@@ -180,6 +180,9 @@ class User_controller extends CI_Controller {
 
                 $this->user_model->update_user($data, $id);
 
+                $this->session->set_userdata('pseudo', $this->input->post('pseudo'));
+                $this->session->has_userdata('pseudo');
+
                 redirect('user_controller/view_user', 'refresh');
             }
         }
