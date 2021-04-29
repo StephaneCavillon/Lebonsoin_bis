@@ -54,7 +54,7 @@
 	</div>
 
 	<!-- Mes annonces -->
-	<div class="row mb-3">
+	<div class="row mb-5">
 		<div class="col">
 
 			<div class="shadow p-1">
