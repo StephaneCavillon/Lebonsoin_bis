@@ -99,8 +99,8 @@ class User_controller extends CI_Controller {
         // KEVIN
         ///////////////////////////////////////////////////////////////////////////
 
-        public function view_user($id) {
-
+        public function view_user() {
+            $id = $_SESSION['id'];
             $data['user'] = $this->user_model->get_one_user($id);
 
             $this->load->view('templates/header');
@@ -114,7 +114,7 @@ class User_controller extends CI_Controller {
 
         }
 
-        public function delete($id){
+        public function delete(){
             $id = $_SESSION['id'];
             $this->user_model->delete($id);
 
