@@ -39,7 +39,7 @@
 							</div>
 							<div class="row p-2 justify-content-center">
 								<div class="col mt-3">
-									<a href="<?=base_url('')?>" type="submit" name="del-account" class="btn btn-footer">Supprimer mon compte</a>
+									<a href="<?=base_url('index.php/user_controller/delete')?>" type="submit" name="del-account" class="btn btn-footer">Supprimer mon compte</a>
 									<button type="submit" name="submit" class="btn btn-success">Sauvegarder</button>
 								</div>
 							</div>
