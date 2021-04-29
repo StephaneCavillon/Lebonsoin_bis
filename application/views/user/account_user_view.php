@@ -71,10 +71,10 @@
                                         </div>
                                         <div class="col-6">
                                             <div class="row">
-                                                <a href="">Peugeot 206</a>
+                                                <h3><a href="">Peugeot 206</a></h3>
                                             </div>
                                             <div class="row">
-                                                <p>2000 €</p>
+                                                <p><strong>2000 €</strong></p>
                                             </div>
                                             <div class="row">
                                                 <p>Véhicules</p>
@@ -85,7 +85,7 @@
                                             </div>
                                         </div>
                                         <div class="col-3">
-                                            <p>10 mar 2021 13:00</p>
+                                            <p>Publié le 10 mar 2021 13:00</p>
                                         </div>
                                     </div>
                                 </li>
@@ -97,10 +97,10 @@
                                         </div>
                                         <div class="col-6">
                                             <div class="row">
-                                                <a href="">Appartement Duplex 4 pièces</a>
+                                                <h3><a href="">Appartement Duplex 4 pièces</a></h3>
                                             </div>
                                             <div class="row">
-                                                <p>120000 €</p>
+                                                <p><strong>120000 €</strong></p>
                                             </div>
                                             <div class="row">
                                                 <p>Véhicules</p>
@@ -111,7 +111,7 @@
                                             </div>
                                         </div>
                                         <div class="col-3">
-                                            <p>28 avr 2021 14:10</p>
+                                            <p>Publié le 28 avr 2021 14:10</p>
                                         </div>
                                     </div>
                                 </li>
