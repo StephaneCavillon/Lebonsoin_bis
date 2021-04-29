@@ -11,7 +11,11 @@
 	<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
 		integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+<<<<<<< HEAD
 	<link rel="stylesheet" href="<?= base_url('assets/css/styles.css')?>">
+=======
+	<link rel="stylesheet" href="<?= base_url("assets/css/styles.css") ?>"/>
+>>>>>>> origin/Laurent
 	<title>Le Mauvais Coin</title>
 </head>
 
@@ -24,7 +28,11 @@
 		<nav class="navbar navbar-expand-lg navbar-light bg-light mb-5 shadow sticky-top">
 			<div class="container">
 				<a class="navbar-brand" href="#">
+<<<<<<< HEAD
 					<img src="<?= base_url('assets/img/logos/logomauvaiscoin.png')?>" width="130" height="20" alt="Logo">
+=======
+					<img src="<?= base_url("assets/img/logos/logomauvaiscoin.png"); ?>"width="130" height="20" alt="Logo">
+>>>>>>> origin/Laurent
 				</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse"
 					data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -49,6 +57,9 @@
 					<ul class="navbar-nav">
 						<li class="nav-item">
 							<a class="login-link nav-link " href="">Connexion</a>
+						</li>
+						<li class="nav-item">
+							<a class="login-link nav-link " href="<?= base_url('index.php/user_controller/register_user_form') ?>">Inscription</a>
 						</li>
 					</ul>
 
