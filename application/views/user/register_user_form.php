@@ -3,7 +3,7 @@
 <?php echo validation_errors(); ?>
 
 <div class="container">
-    <div class="row">
+    <div class="row mb-5">
         <div class="mx-auto">
         <h2 class=" m-auto"><?php echo $title; ?></h2>
     <?php echo form_open('user_controller/register_user_form'); ?>
@@ -43,7 +43,7 @@
                     <div id="confirm_password_error" class="form-text formError"><?= $errorsArray['confirm_password_error'] ?? ''?></div>
                 </div>
                 
-                <button type="submit" name ="inscription" class="btn buttonNav">Valider</button>
+                <button type="submit" name ="inscription" class="btn btn-success">Valider</button>
             </form>
         </div>
     </div>  
