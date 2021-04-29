@@ -80,8 +80,8 @@
                                                 <p>Véhicules</p>
                                             </div>
                                             <div class="row">
-                                                <button class="btn btn-success">Modifier</button>
-                                                <button class="btn btn-footer ml-2">Supprimer</button>
+                                                <a href="<?=base_url('index.php/article_controller/edit_article/')?>" class="btn btn-success">Modifier</a>
+                                                <a href="<?=base_url('index.php/article_controller/edit_article/')?>" class="btn btn-footer ml-2">Supprimer</a>
                                             </div>
                                         </div>
                                         <div class="col-3">
@@ -106,8 +106,8 @@
                                                 <p>Véhicules</p>
                                             </div>
                                             <div class="row">
-                                                <button class="btn btn-success">Modifier</button>
-                                                <button class="btn btn-footer ml-2">Supprimer</button>
+                                                <a href="<?=base_url('index.php/article_controller/edit_article/')?>" class="btn btn-success">Modifier</a>
+                                                <a href="<?=base_url('index.php/article_controller/edit_article/')?>" class="btn btn-footer ml-2">Supprimer</a>
                                             </div>
                                         </div>
                                         <div class="col-3">
