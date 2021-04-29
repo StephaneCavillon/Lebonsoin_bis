@@ -16,6 +16,10 @@ html {
 	font-family: 'Heebo', Tahoma, Verdana, sans-serif;
 }
 
+li {
+	list-style-type: none;
+}
+
 /* Scrollbar */
 
 ::-webkit-scrollbar-track {
