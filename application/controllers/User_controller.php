@@ -77,12 +77,14 @@ class User_controller extends CI_Controller {
                   {
                     $this->session->set_userdata('pseudo', $password_hash[0]->pseudo);
                     $this->session->has_userdata('pseudo');  
+                
                   }
 
                     $data['title'] = 'Connectez vous';
                     $this->load->view('templates/header', $data);
                     $this->load->view('user/connection_user_form',$data);
                     $this->load->view('templates/footer');
+                    
                     
                 }else{
 
@@ -105,6 +107,19 @@ class User_controller extends CI_Controller {
             $this->load->view('user/account_user_view', $data);
             $this->load->view('templates/footer');
         }
+//////////////////// lau
+        public  function deconnection(){
+            $this->session->unset_userdata('pseudo');
+            redirect('home_controller/index', 'refresh');
+
+        }
+
+        public function delete($id){
+            $id = $_SESSION['id'];
+            $this->user_model->delete($id);
+
+        }
+
 
 
 
