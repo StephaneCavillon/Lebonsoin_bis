@@ -23,7 +23,7 @@
 
 		<nav class="navbar navbar-expand-lg navbar-light bg-light mb-5 shadow sticky-top">
 			<div class="container">
-				<a class="navbar-brand" href="#">
+				<a class="navbar-brand" href="<?=base_url('index.php/')?>">
 					<img src="<?= base_url('assets/img/logos/logomauvaiscoin.png')?>" width="130" height="20" alt="Logo">
 				</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse"
