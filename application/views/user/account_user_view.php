@@ -44,7 +44,6 @@
 							</div>
 						</div>
 
-
 						</form>
 					</div>
 				</div>
@@ -62,61 +61,67 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-12">
-                            <ul>
-                            
-                                <li class="mb-4">
-                                    <div class="row">
-                                        <div class="col-3">
-                                            <img class="img-fluid" src="<?=base_url('assets/upload/1.jpg')?>" alt="" width="100%">
-                                        </div>
-                                        <div class="col-6">
-                                            <div class="row">
-                                                <h3><a href="">Peugeot 206</a></h3>
-                                            </div>
-                                            <div class="row">
-                                                <p><strong>2000 €</strong></p>
-                                            </div>
-                                            <div class="row">
-                                                <p>Véhicules</p>
-                                            </div>
-                                            <div class="row">
-                                                <a href="<?=base_url('index.php/article_controller/edit_article/')?>" class="btn btn-success">Modifier</a>
-                                                <a href="<?=base_url('index.php/article_controller/edit_article/')?>" class="btn btn-footer ml-2">Supprimer</a>
-                                            </div>
-                                        </div>
-                                        <div class="col-3">
-                                            <p>Publié le 10 mar 2021 13:00</p>
-                                        </div>
-                                    </div>
-                                </li>
+							<ul>
 
-                                <li>
-                                    <div class="row">
-                                        <div class="col-3">
-                                            <img class="img-fluid" src="<?=base_url('assets/upload/4.jpg')?>" alt="" width="100%">
-                                        </div>
-                                        <div class="col-6">
-                                            <div class="row">
-                                                <h3><a href="">Appartement Duplex 4 pièces</a></h3>
-                                            </div>
-                                            <div class="row">
-                                                <p><strong>120000 €</strong></p>
-                                            </div>
-                                            <div class="row">
-                                                <p>Véhicules</p>
-                                            </div>
-                                            <div class="row">
-                                                <a href="<?=base_url('index.php/article_controller/edit_article/')?>" class="btn btn-success">Modifier</a>
-                                                <a href="<?=base_url('index.php/article_controller/edit_article/')?>" class="btn btn-footer ml-2">Supprimer</a>
-                                            </div>
-                                        </div>
-                                        <div class="col-3">
-                                            <p>Publié le 28 avr 2021 14:10</p>
-                                        </div>
-                                    </div>
-                                </li>
+								<li class="mb-4">
+									<div class="row">
+										<div class="col-3">
+											<img class="img-fluid" src="<?=base_url('assets/upload/1.jpg')?>" alt=""
+												width="100%">
+										</div>
+										<div class="col-6">
+											<div class="row">
+												<h3><a href="">Peugeot 206</a></h3>
+											</div>
+											<div class="row">
+												<p><strong>2000 €</strong></p>
+											</div>
+											<div class="row">
+												<p>Véhicules</p>
+											</div>
+											<div class="row">
+												<a href="<?=base_url('index.php/article_controller/edit_article/')?>"
+													class="btn btn-success">Modifier</a>
+												<a href="<?=base_url('index.php/article_controller/edit_article/')?>"
+													class="btn btn-footer ml-2">Supprimer</a>
+											</div>
+										</div>
+										<div class="col-3">
+											<p>Publié le 10 mar 2021 13:00</p>
+										</div>
+									</div>
+								</li>
 
-                            </ul>
+								<li>
+									<div class="row">
+										<div class="col-3">
+											<img class="img-fluid" src="<?=base_url('assets/upload/4.jpg')?>" alt=""
+												width="100%">
+										</div>
+										<div class="col-6">
+											<div class="row">
+												<h3><a href="">Appartement Duplex 4 pièces</a></h3>
+											</div>
+											<div class="row">
+												<p><strong>120000 €</strong></p>
+											</div>
+											<div class="row">
+												<p>Véhicules</p>
+											</div>
+											<div class="row">
+												<a href="<?=base_url('index.php/article_controller/edit_article/')?>"
+													class="btn btn-success">Modifier</a>
+												<a href="<?=base_url('index.php/article_controller/edit_article/')?>"
+													class="btn btn-footer ml-2">Supprimer</a>
+											</div>
+										</div>
+										<div class="col-3">
+											<p>Publié le 28 avr 2021 14:10</p>
+										</div>
+									</div>
+								</li>
+
+							</ul>
 						</div>
 					</div>
 				</div>
