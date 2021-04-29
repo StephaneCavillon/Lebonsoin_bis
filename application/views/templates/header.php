@@ -46,14 +46,25 @@
 									class="fas fa-search"></i></button>
 						</form>
 					</ul>
+					<?php if(empty($_SESSION['pseudo'])){  ?>
 					<ul class="navbar-nav">
 						<li class="nav-item">
-							<a class="login-link nav-link " href=""><img src="<?=base_url('assets/img/user.png')?>" alt=""> Connexion</a>
-						</li>
-						<li class="nav-item">
-							<a class="login-link nav-link " href="<?= base_url('index.php/user_controller/register_user_form') ?>">Inscription</a>
+							<a class="login-link nav-link " href="<?=base_url('index.php/user_controller/connection_user_form')?>"><img src="<?=base_url('assets/img/user.png')?>" alt=""> Connexion</a>
 						</li>
 					</ul>
+					<?php }else{?>
+						<ul class="navbar-nav">
+							<li class="nav-item">
+								<a class="login-link nav-link " href="<?=base_url('index.php/user_controller/view_user')?>"><img src="<?=base_url('assets/img/user.png')?>" alt=""><?= $_SESSION['pseudo'] ?></a>
+							</li>
+						</ul>
+						
+						<ul class="navbar-nav">
+							<li class="nav-item">
+								<a class="login-link nav-link " href="<?=base_url('index.php/user_controller/deconnection')?>">Déconnexion</a>
+							</li>
+						</ul>
+						<?php } ?>
 
 				</div>
 			</div>

@@ -74,15 +74,15 @@ class User_controller extends CI_Controller {
                     $password_input = $this->input->post('password_user');
                     $password_hash =  $this->user_model->get_user($mail);
                     
-                    if(password_verify($password_input, $password_hash[0]->password_user)) {
-                        $this->session->set_userdata('id', $password_hash[0]->id);
-                        $this->session->set_userdata('pseudo', $password_hash[0]->pseudo);
-                        $this->session->has_userdata('pseudo');
-                        $this->session->has_userdata('id');
+                if(password_verify($password_input, $password_hash[0]->password_user)) {
+                    $this->session->set_userdata('id', $password_hash[0]->id);
+                    $this->session->set_userdata('pseudo', $password_hash[0]->pseudo);
+                    $this->session->has_userdata('pseudo');
+                    $this->session->has_userdata('id');
 
 
-                        redirect('home_controller/index', 'refresh');
-                    }
+                    redirect('home_controller/index', 'refresh');
+                }
 
                 }else{
 
@@ -118,6 +118,19 @@ class User_controller extends CI_Controller {
 
             }    
         }
+//////////////////// lau
+        public  function deconnection(){
+            $this->session->unset_userdata('pseudo');
+            redirect('home_controller/index', 'refresh');
+
+        }
+
+        public function delete($id){
+            $id = $_SESSION['id'];
+            $this->user_model->delete($id);
+
+        }
+
 
         public function update_user() {
 

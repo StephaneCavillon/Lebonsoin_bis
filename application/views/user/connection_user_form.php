@@ -1,4 +1,5 @@
-<?php echo validation_errors(); ?>
+<?php echo validation_errors();?>
+
 
 <div class="container">
 	<div class="row mb-5">
