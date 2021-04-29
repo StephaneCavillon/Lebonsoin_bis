@@ -43,7 +43,7 @@
                     <div id="confirm_password_error" class="form-text formError"><?= $errorsArray['confirm_password_error'] ?? ''?></div>
                 </div>
                 
-                <button type="submit" name ="inscription" class="btn buttonNav">Valider</button>
+                <button type="submit" name ="connection" class="btn buttonNav">Valider</button>
             </form>
         </div>
     </div>  

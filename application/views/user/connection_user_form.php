@@ -4,6 +4,7 @@
     <div class="row">
         <div class="mx-auto">
         <h2 class=" m-auto"><?php echo $title; ?></h2>
+       <?php var_dump($title);?>
     <?php echo form_open('user_controller/connection_user_form'); ?>
                 <!-- Pseudo -->
                 <div class="form-group">
@@ -19,3 +20,6 @@
                 </div>
                 <button type="submit" name ="inscription" class="btn buttonNav">Valider</button>
             </form>
+        </div>
+    </div>
+</div>

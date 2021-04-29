@@ -20,5 +20,22 @@ class User_model extends CI_Model {
               return $this->db->insert('user', $data);
           }
 
+          public function get_user($mail)
+          {
+              $this->db->select('pseudo, password_user');
+              $this->db->where( 'mail' ,$mail);
+              $query = $this->db->get('user');
+              return $query->result();
+          }
+           public function mail_exist($mail)
+           {
+                $this->db->where( 'mail' ,$mail);
+                $query = $this->db->get('user');
+                var_dump($query->result());
+                return $query->result();
+
+
+           }
+
 
     }

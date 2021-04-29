@@ -45,7 +45,52 @@ class User_controller extends CI_Controller {
                 $this->load->view('templates/footer');
             }
         }
-        
+        public function connection_user_form()
+        {
+            $this->load->helper('form');
+            
+            $this->load->library('form_validation');
+            $data['title'] = 'Connectez vous';
+            $this->form_validation->set_rules('mail', 'Mail', 'trim|required');
+            $this->form_validation->set_rules('password_user', 'Mot de passe', 'required');
+            
+            if ($this->form_validation->run() === FALSE)
+            {
+                $this->load->view('templates/header', $data);
+                $this->load->view('user/connection_user_form',$data);
+                $this->load->view('templates/footer');
+
+            }
+            else
+            {
+                $data['title'] = 'Connectez vous';
+                $mail =  $this->input->post('mail');
+                    
+              
+                $m = $this->user_model->mail_exist($mail);
+    
+                if($m == true){
+                    $password_input = $this->input->post('password_user');
+                    $password_hash =  $this->user_model->get_user($mail);
+                    
+                  if(password_verify($password_input, $password_hash[0]->password_user))
+                  {
+                    $this->session->set_userdata('pseudo', $password_hash[0]->pseudo);
+                    $this->session->has_userdata('pseudo');  
+                  }
+
+                    $data['title'] = 'Connectez vous';
+                    $this->load->view('templates/header', $data);
+                    $this->load->view('user/connection_user_form',$data);
+                    $this->load->view('templates/footer');
+                    
+                }else{
+
+                    echo'mail ou mot de passe incorrect';
+                }
+            }
+
+        }
         
 
 
