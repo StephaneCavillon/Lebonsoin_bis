@@ -4,7 +4,7 @@
 	<!-- Mes infos -->
 	<div class="row mb-3">
 		<div class="col">
-			<div class="shadow p-1">
+			<div class="shadow p-1 div">
 				<div class="row p-2 m-2">
 					<div class="col-sm-12 col-lg-9">
 						<h5 class="card-title"><?=$user[0]->pseudo ?? ''?></h5>
@@ -57,7 +57,7 @@
 	<div class="row mb-5">
 		<div class="col">
 
-			<div class="shadow p-1">
+			<div class="shadow p-1 div">
 				<h2 class="p-2">Mes annonces</h2>
 				<div class="container">
 					<div class="row">
