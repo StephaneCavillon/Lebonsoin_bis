@@ -45,6 +45,7 @@ class User_controller extends CI_Controller {
                 $this->load->view('templates/footer');
             }
         }
+
         public function connection_user_form()
         {
             $this->load->helper('form');
@@ -74,8 +75,11 @@ class User_controller extends CI_Controller {
                     $password_hash =  $this->user_model->get_user($mail);
                     
                     if(password_verify($password_input, $password_hash[0]->password_user)) {
+                        $this->session->set_userdata('id', $password_hash[0]->id);
                         $this->session->set_userdata('pseudo', $password_hash[0]->pseudo);
                         $this->session->has_userdata('pseudo');
+                        $this->session->has_userdata('id');
+
 
                         redirect('home_controller/index', 'refresh');
                     }
@@ -95,11 +99,11 @@ class User_controller extends CI_Controller {
 
         public function view_user() {
 
-            if (!empty($_SESSION['pseudo'])) {
+            if (!empty($_SESSION['id'])) {
 
-                $pseudo = $_SESSION['pseudo'];
+                $id = $_SESSION['id'];
 
-                $data['user'] = $this->user_model->get_one_user($pseudo);
+                $data['user'] = $this->user_model->get_one_user($id);
 
                 $this->load->view('templates/header');
                 $this->load->view('user/account_user_view', $data);
@@ -113,7 +117,44 @@ class User_controller extends CI_Controller {
                 $this->load->view('templates/footer');
 
             }    
-            
+        }
+
+        public function update_user() {
+
+            $id = $_SESSION['id'];
+            $data['user'] = $this->user_model->get_one_user($id);
+
+            $this->load->helper('form');
+            $this->load->library('form_validation');
+
+            $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
+
+            $this->form_validation->set_rules('pseudo', 'Pseudo', 'trim|is_unique[user.pseudo]');
+            $this->form_validation->set_rules('mail', 'Mail', 'trim|is_unique[user.mail]');
+            $this->form_validation->set_rules('birthdate', 'Birthdate', 'trim');
+
+            if ($this->form_validation->run() === FALSE)
+            {
+                $this->load->view('templates/header');
+                $this->load->view('user/account_user_view');
+                $this->load->view('templates/footer');
+
+            } else {
+
+                $data = array(
+                    'pseudo' => $this->input->post('pseudo'),
+                    'mail' =>$this->input->post('mail'),
+                    'birthdate' => $this->input->post('birthdate'),
+                );
+
+                $id = $_SESSION['id'];
+
+                $user['user'] = $this->user_model->get_one_user($id);
+
+                $this->user_model->update_user($data, $id);
+
+                redirect('user_controller/view_user', 'refresh');
+            }
         }
 
     }

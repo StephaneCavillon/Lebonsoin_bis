@@ -21,7 +21,7 @@
 
 						<?= validation_errors() ?>
 
-						<?= form_open('user/edit_user/'.$user[0]->id) ?>
+						<?= form_open('user_controller/update_user/') ?>
 
 						<div class="row m-3 p-2">
 							<div class="col-md-4">
