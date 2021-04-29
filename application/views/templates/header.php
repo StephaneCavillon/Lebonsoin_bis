@@ -11,7 +11,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
 		integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-	<link rel="stylesheet" href="<?= base_url('assets/css/styles.css')?>">
+	<link rel="stylesheet" href="<?= base_url("assets/css/styles.css") ?>"/>
 	<title>Le Mauvais Coin</title>
 </head>
 
@@ -23,7 +23,7 @@
 
 		<nav class="navbar navbar-expand-lg navbar-light bg-light mb-5 shadow sticky-top">
 			<div class="container">
-				<a class="navbar-brand" href="#">
+				<a class="navbar-brand" href="<?=base_url('index.php/')?>">
 					<img src="<?= base_url('assets/img/logos/logomauvaiscoin.png')?>" width="130" height="20" alt="Logo">
 				</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -46,11 +46,25 @@
 									class="fas fa-search"></i></button>
 						</form>
 					</ul>
+					<?php if(empty($_SESSION['pseudo'])){  ?>
 					<ul class="navbar-nav">
 						<li class="nav-item">
-							<a class="login-link nav-link " href="">Connexion</a>
+							<a class="login-link nav-link " href="<?=base_url('index.php/user_controller/connection_user_form')?>"><img src="<?=base_url('assets/img/user.png')?>" alt=""> Connexion</a>
 						</li>
 					</ul>
+					<?php }else{?>
+						<ul class="navbar-nav">
+							<li class="nav-item">
+								<a class="login-link nav-link " href="<?=base_url('index.php/user_controller/view_user')?>"><img src="<?=base_url('assets/img/user.png')?>" alt=""><?= $_SESSION['pseudo'] ?></a>
+							</li>
+						</ul>
+						
+						<ul class="navbar-nav">
+							<li class="nav-item">
+								<a class="login-link nav-link " href="<?=base_url('index.php/user_controller/deconnection')?>">Déconnexion</a>
+							</li>
+						</ul>
+						<?php } ?>
 
 				</div>
 			</div>
