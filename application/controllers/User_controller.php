@@ -14,7 +14,7 @@ class User_controller extends CI_Controller {
             $this->load->helper('form');
             
             $this->load->library('form_validation');
-             $data['title'] = 'Inscrivez vous';
+            $data['title'] = 'Inscrivez vous';
             $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
             $this->form_validation->set_rules('pseudo', 'Pseudo', 'trim|required|is_unique[user.pseudo]');
             $this->form_validation->set_rules('confirmMail', 'confirmation mail', 'trim|required');
@@ -66,24 +66,20 @@ class User_controller extends CI_Controller {
                 $data['title'] = 'Connectez vous';
                 $mail =  $this->input->post('mail');
                     
-              
+            
                 $m = $this->user_model->mail_exist($mail);
     
                 if($m == true){
                     $password_input = $this->input->post('password_user');
                     $password_hash =  $this->user_model->get_user($mail);
                     
-                  if(password_verify($password_input, $password_hash[0]->password_user))
-                  {
-                    $this->session->set_userdata('pseudo', $password_hash[0]->pseudo);
-                    $this->session->has_userdata('pseudo');  
-                  }
+                    if(password_verify($password_input, $password_hash[0]->password_user)) {
+                        $this->session->set_userdata('pseudo', $password_hash[0]->pseudo);
+                        $this->session->has_userdata('pseudo');
 
-                    $data['title'] = 'Connectez vous';
-                    $this->load->view('templates/header', $data);
-                    $this->load->view('user/connection_user_form',$data);
-                    $this->load->view('templates/footer');
-                    
+                        redirect('home_controller/index', 'refresh');
+                    }
+
                 }else{
 
                     echo'mail ou mot de passe incorrect';
@@ -97,16 +93,27 @@ class User_controller extends CI_Controller {
         // KEVIN
         ///////////////////////////////////////////////////////////////////////////
 
-        public function view_user($id) {
+        public function view_user() {
 
-            $data['user'] = $this->user_model->get_one_user($id);
+            if (!empty($_SESSION['pseudo'])) {
 
-            $this->load->view('templates/header');
-            $this->load->view('user/account_user_view', $data);
-            $this->load->view('templates/footer');
+                $pseudo = $_SESSION['pseudo'];
+
+                $data['user'] = $this->user_model->get_one_user($pseudo);
+
+                $this->load->view('templates/header');
+                $this->load->view('user/account_user_view', $data);
+                $this->load->view('templates/footer');
+
+            } else {
+
+                $data['title'] = 'Connectez vous';
+                $this->load->view('templates/header', $data);
+                $this->load->view('user/connection_user_form');
+                $this->load->view('templates/footer');
+
+            }    
+            
         }
-
-
-
 
     }

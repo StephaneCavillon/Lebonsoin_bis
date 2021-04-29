@@ -25,7 +25,6 @@ class User_model extends CI_Model
     {
         $this->db->where( 'mail' ,$mail);
         $query = $this->db->get('user');
-        var_dump($query->result());
         return $query->result();
 
 
@@ -41,9 +40,9 @@ class User_model extends CI_Model
 // KEVIN
 ///////////////////////////////////////////////////////////////////////////////////////
 
-    public function get_one_user($id) {
+    public function get_one_user($pseudo) {
 
-        $query = $this->db->get_where('user', array('id' => $id));
+        $query = $this->db->get_where('user', array('pseudo' => $pseudo));
         return $query->result();
     }
 }

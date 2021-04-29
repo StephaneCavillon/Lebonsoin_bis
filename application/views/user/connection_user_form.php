@@ -1,7 +1,7 @@
 <?php echo validation_errors(); ?>
 
 <div class="container">
-	<div class="row">
+	<div class="row mb-5">
 		<div class="mx-auto">
 			<h2 class=" m-auto"><?php echo $title; ?></h2>
 			<?php echo form_open('user_controller/connection_user_form'); ?>
@@ -17,11 +17,11 @@
 			<div class="form-group">
 				<label for="password_user">Mot de passe</label>
 				<input type="password" class="form-control" id="password_user" name="password_user"
-					title='Le mot de passe doit contenir au moins 10 caractères dont 2 majuscules, 1minuscule et 2 chiffres. Les caractères spéciaux ne sont pas autorisés'
+					title='Le mot de passe doit contenir au moins 10 caractères dont 2 majuscules, 1 minuscule et 2 chiffres. Les caractères spéciaux ne sont pas autorisés'
 					value="<?=$passwd ?? ''?>" required>
 				<div id="password_error" class="form-text formError"><?= $errorsArray['password_error'] ?? ''?></div>
 			</div>
-			<button type="submit" name="inscription" class="btn buttonNav">Valider</button>
+			<button type="submit" name="inscription" class="btn btn-success">Valider</button>
 			</form>
 		</div>
 	</div>
