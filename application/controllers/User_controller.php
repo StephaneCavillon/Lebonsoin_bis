@@ -129,18 +129,32 @@ class User_controller extends CI_Controller {
 
             $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
 
-            $this->form_validation->set_rules('pseudo', 'Pseudo', 'trim|is_unique[user.pseudo]');
-            $this->form_validation->set_rules('mail', 'Mail', 'trim|is_unique[user.mail]');
-            $this->form_validation->set_rules('birthdate', 'Birthdate', 'trim');
+            if ($data['user'][0]->mail == $this->input->post('mail')) {
+                    
+                $isUniqueMail = '';
+            } else {
+                $isUniqueMail = '|is_unique[user.mail]';
+            }
+
+            if ($data['user'][0]->pseudo == $this->input->post('pseudo')) {
+                    
+                $isUniquePseudo = '';
+            } else {
+                $isUniquePseudo = '|is_unique[user.pseudo]';
+            }
+
+            $this->form_validation->set_rules('pseudo', 'Pseudo', 'trim'.$isUniquePseudo);
+            $this->form_validation->set_rules('mail', 'Email', 'trim'.$isUniqueMail);
+            $this->form_validation->set_rules('birthdate', 'Date de naissance', 'trim');
 
             if ($this->form_validation->run() === FALSE)
             {
                 $this->load->view('templates/header');
-                $this->load->view('user/account_user_view');
+                $this->load->view('user/account_user_view', $data);
                 $this->load->view('templates/footer');
 
             } else {
-
+                
                 $data = array(
                     'pseudo' => $this->input->post('pseudo'),
                     'mail' =>$this->input->post('mail'),
