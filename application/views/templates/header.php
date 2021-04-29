@@ -48,7 +48,7 @@
 					</ul>
 					<ul class="navbar-nav">
 						<li class="nav-item">
-							<a class="login-link nav-link " href="">Connexion</a>
+							<a class="login-link nav-link " href=""><img src="<?=base_url('assets/img/user.png')?>" alt=""> Connexion</a>
 						</li>
 						<li class="nav-item">
 							<a class="login-link nav-link " href="<?= base_url('index.php/user_controller/register_user_form') ?>">Inscription</a>
