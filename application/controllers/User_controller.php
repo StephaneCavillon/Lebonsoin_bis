@@ -125,7 +125,7 @@ class User_controller extends CI_Controller {
 
         }
 
-        public function delete($id){
+        public function delete(){
             $id = $_SESSION['id'];
             $this->user_model->delete($id);
 
