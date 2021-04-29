@@ -10,9 +10,10 @@
 						<h5 class="card-title"><?=$user[0]->pseudo ?? ''?></h5>
 						<p><?=$user[0]->mail ?? ''?></p>
 					</div>
-					<div class="col-sm-12 col-lg-3">
+					<div class="col-sm-12 col-lg-3 text-center">
 						<button class="btn btn-success mt-3" type="button" data-toggle="collapse"
 							data-target="#collapse">Modifier mes informations</button>
+						<a href="<?=base_url('index.php/user_controller/delete')?>" type="submit" name="del-account" class="text-danger">Supprimer mon compte</a>
 					</div>
 				</div>
 
@@ -39,7 +40,6 @@
 							</div>
 							<div class="row p-2 justify-content-center">
 								<div class="col mt-3">
-									<a href="<?=base_url('index.php/user_controller/delete')?>" type="submit" name="del-account" class="btn btn-footer">Supprimer mon compte</a>
 									<button type="submit" name="submit" class="btn btn-success">Sauvegarder</button>
 								</div>
 							</div>
