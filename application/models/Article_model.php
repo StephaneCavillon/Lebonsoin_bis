@@ -3,7 +3,7 @@ class Article_model extends CI_Model {
 
 	public function __construct()
 	{
-			$this->load->database();
+		$this->load->database();
 	}
 
 	public function get_rand_articles() {
@@ -50,5 +50,18 @@ class Article_model extends CI_Model {
 		$query = $this->db->where('article.id', $id);
 		$query = $this->db->get();
 		return $query->result(); 
+	}
+
+	public function get_list_articles_by_user($pseudo_user){
+		$query = $this->db->select('*');
+		$query = $this->db->from('article');
+		$query = $this->db->join('photo', 'article.id = photo.id_article');
+		$query = $this->db->join('user', 'article.id_user = user.id');
+		$query = $this->db->join('category', 'article.id_category = category.id');
+		$query = $this->db->where('user.pseudo', $pseudo_user);
+		$query = $this->db->order_by('created_at', 'DESC');
+		$query = $this->db->get();
+		return $query->result(); // retourne un objet
+
 	}
 }
