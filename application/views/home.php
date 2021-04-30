@@ -14,8 +14,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 		<?php foreach($articles as $article): ?>
 
-			<div class="col">
-				<div class="card shadow">
+			<div class="col-12 col-md-3">
+				<div class="card shadow mb-3">
 					<a href=""><img src="<?= base_url('assets/upload/').$article->name_img ?? ''?>" class="card-img-top" width="'100%" height="200px" alt="<?=$article->title ?? ''?>"></a>
 					<div class="card-body">
 						<h5 class="card-title article-title"><?=$article->title ?? ''?></h5>
