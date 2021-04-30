@@ -52,6 +52,7 @@ class Article_model extends CI_Model {
 		return $query->result(); 
 	}
 
+<<<<<<< HEAD
 	public function get_list_articles_by_user($pseudo_user){
 		$query = $this->db->select('*');
 		$query = $this->db->from('article');
@@ -64,4 +65,10 @@ class Article_model extends CI_Model {
 		return $query->result(); // retourne un objet
 
 	}
+=======
+	public function delete(){
+		
+	}
+
+>>>>>>> ab891a6de800a17bdcda8f6d821814a63acf0a7c
 }

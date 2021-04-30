@@ -134,6 +134,9 @@ class Article_controller extends CI_Controller {
           $this->load->view('templates/footer');
 
      }
+     public function delete(){
+          
+     }
 
 
 }
