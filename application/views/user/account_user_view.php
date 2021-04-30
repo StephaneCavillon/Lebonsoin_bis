@@ -1,4 +1,11 @@
 <div class="container">
+<?= validation_errors() ?>
+<?php 
+if (isset($_SESSION['alert'])) {
+    echo $_SESSION['alert'];
+    $_SESSION['alert'] = '';
+}
+?>
 
 	<h1 class="mb-3">Mon compte</h1>
 	<!-- Mes infos -->
@@ -20,7 +27,6 @@
 				<div class="collapse m-3 p-3 shadow" id="collapse">
 					<div>
 
-						<?= validation_errors() ?>
 
 						<?= form_open('user_controller/update_user/') ?>
 
@@ -58,74 +64,53 @@
 		<div class="col">
 
 			<div class="shadow p-1 div">
-				<h2 class="p-2">Mes annonces</h2>
+				
 				<div class="container">
 					<div class="row">
 						<div class="col-12">
-							<ul>
-
+						<h2 class="p-2">Mes annonces</h2>
+						<?php if($user[0]->id_article == 0){
+							echo '<div>Pas d\'annonce publiée </div>';
+						}else{?>
+								
+							<ul class="pl-3">
+							<?php foreach($user as $article_user): ?>
 								<li class="mb-4">
-									<div class="row">
-										<div class="col-3">
-											<img class="img-fluid" src="<?=base_url('assets/upload/1.jpg')?>" alt=""
+									<div class="row  text-center">
+										<div class="col-md-3 mr-auto pl-0">
+											<img class="img-fluid" src="<?=base_url('assets/upload/'.$article_user->id_article.'.jpg')?>" alt=""
 												width="100%">
 										</div>
-										<div class="col-6">
+										<div class="col-md-6">
 											<div class="row">
-												<h3><a href="">Peugeot 206</a></h3>
+												<h3><a href=""><?=$article_user->title?></a></h3>
 											</div>
 											<div class="row">
-												<p><strong>2000 €</strong></p>
+												<p><strong><?=$article_user->price?></strong></p>
 											</div>
 											<div class="row">
-												<p>Véhicules</p>
+												<p><?=$article_user->name_cat?></p>
 											</div>
-											<div class="row">
-												<a href="<?=base_url('index.php/article_controller/edit_article/')?>"
+											<div class="row mb-3">
+												<a href="<?=base_url('index.php/article_controller/edit_article/'.$article_user->id_article)?>"
 													class="btn btn-success">Modifier</a>
-												<a href="<?=base_url('index.php/article_controller/edit_article/')?>"
+												<a href="<?=base_url('index.php/article_controller/delete/'.$article_user->id_article)?>"
 													class="btn btn-footer ml-2">Supprimer</a>
 											</div>
 										</div>
-										<div class="col-3">
-											<p>Publié le 10 mar 2021 13:00</p>
+										<div class="col-md-3">
+											<p>Publié le <?=$article_user->created_at?></p>
 										</div>
 									</div>
 								</li>
-
-								<li>
-									<div class="row">
-										<div class="col-3">
-											<img class="img-fluid" src="<?=base_url('assets/upload/4.jpg')?>" alt=""
-												width="100%">
-										</div>
-										<div class="col-6">
-											<div class="row">
-												<h3><a href="">Appartement Duplex 4 pièces</a></h3>
-											</div>
-											<div class="row">
-												<p><strong>120000 €</strong></p>
-											</div>
-											<div class="row">
-												<p>Véhicules</p>
-											</div>
-											<div class="row">
-												<a href="<?=base_url('index.php/article_controller/edit_article/')?>"
-													class="btn btn-success">Modifier</a>
-												<a href="<?=base_url('index.php/article_controller/edit_article/')?>"
-													class="btn btn-footer ml-2">Supprimer</a>
-											</div>
-										</div>
-										<div class="col-3">
-											<p>Publié le 28 avr 2021 14:10</p>
-										</div>
-									</div>
-								</li>
-
+								<?php endforeach ?>
 							</ul>
+							
+						<?php } ?>
 						</div>
 					</div>
 				</div>
+				
 			</div>
 		</div>
 	</div>

@@ -27,7 +27,7 @@ class Article_model extends CI_Model {
 
 	}
 
-	public function get_article($id = FALSE){
+	public function get_list_articles(){
 
 		$query = $this->db->select('*');
 		$query = $this->db->from('article');
@@ -35,19 +35,27 @@ class Article_model extends CI_Model {
 		$query = $this->db->join('user', 'article.id_user = user.id');
 		$query = $this->db->join('category', 'article.id_category = category.id');
 
-		if ($id === FALSE)
-		{
-			$query = $this->db->order_by('created_at', 'DESC');
-			$query = $this->db->get();
-			return $query->result(); // retourne un objet
-		}
+		$query = $this->db->order_by('created_at', 'DESC');
+		$query = $this->db->get();
+		return $query->result(); // retourne un objet
+	}
 
-		$query = $this->db->get_where('article', array('id' => $id));
+	public function get_article($id){
+
+		$query = $this->db->select('*');
+		$query = $this->db->from('article');
+		$query = $this->db->join('photo', 'article.id = photo.id_article');
+		$query = $this->db->join('user', 'article.id_user = user.id');
+		$query = $this->db->join('category', 'article.id_category = category.id');
+		$query = $this->db->where('article.id', $id);
+		$query = $this->db->get();
 		return $query->result(); 
 	}
 
-	public function delete(){
+	public function delete($id){
 		
+		return $this->db->delete('article', array('id' => $id));
 	}
-
+	 
+	
 }

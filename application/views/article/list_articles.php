@@ -14,19 +14,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 		<?php foreach($articles as $article): ?>
 
-			<div class="row">
-				<div class="col-4">
-				<a href="<?= $article->id?>"><img src="<?= base_url('assets/upload/').$article->name_img ?? ''?>" class="img-thumbnail rounded" width="150px" alt="<?=$article->title ?? ''?>"></a>
+			<div class="row border border-dark rounded py-2 mt-2">
+				<div class="col-4 d-flex align-items-between">
+				<a href="<?=base_url('/index.php/Article_controller/view_article/'.$article->id)?>"><img src="<?= base_url('assets/upload/').$article->name_img ?? ''?>" class="img-fluid rounded " width="150px" alt="<?=$article->title ?? ''?>"></a>
 				</div>
-				<div class="col">
-					<div class="row">
-						<?=$article->title?>
-					</div>	
-					<div class="row">
+				<div class="col-6 ">
+					<a href="<?=base_url('/index.php/Article_controller/view_article/'.$article->id)?>">
+						<div class="row">
+							<?=$article->title?>
+						</div>
+					</a>	
+					<div class="row ">
 						<?=$article->name_cat?>
 					</div>
-					<div class="row">
-						<?=$article->price?>€
+					<div class="row align-self-end">
+						<div class="col">
+							<?=$article->city?>
+						</div>
+						<div class="col">
+							<?=$article->price?>€
+						</div>
 					</div>
 				</div>
 			</div>

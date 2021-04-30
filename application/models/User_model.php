@@ -44,7 +44,29 @@ class User_model extends CI_Model
 
     public function get_one_user($id) {
 
-        $query = $this->db->get_where('user', array('id' => $id));
+        
+		$query = $this->db->select('article.id AS id_article, 
+                                    photo.id AS id_photo,
+                                    user.id AS id_user,
+                                    user.mail,
+                                    user.pseudo,
+                                    birthdate,
+                                    name_cat,
+                                    title, 
+                                    description_art, 
+                                    price,
+                                    created_at, 
+                                    zipcode, 
+                                    city, 
+                                    phone,
+                                    name_img');
+		$query = $this->db->from('user');
+        $query = $this->db->join('article', 'article.id_user = user.id','left');
+		$query = $this->db->join('photo', 'article.id = photo.id_article','left');
+		
+		$query = $this->db->join('category', 'article.id_category = category.id','left');
+		$query = $this->db->where('user.id', $id);
+		$query = $this->db->get();
         return $query->result();
     }
 

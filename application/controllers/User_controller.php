@@ -104,7 +104,7 @@ class User_controller extends CI_Controller {
                 $id = $_SESSION['id'];
 
                 $data['user'] = $this->user_model->get_one_user($id);
-
+               
                 $this->load->view('templates/header');
                 $this->load->view('user/account_user_view', $data);
                 $this->load->view('templates/footer');
