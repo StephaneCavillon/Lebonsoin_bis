@@ -15,14 +15,14 @@ class Article_controller extends CI_Controller {
     }
 
     public function list_articles(){
-          $data['title']= 'Liste des Articles';
+        $data['title']= 'Liste des Articles';
 
-          $data['articles'] = $this->Article_model->get_list_articles();
+        $data['articles'] = $this->Article_model->get_list_articles();
 
-          if (empty($data['articles']))
-          {
-               show_404();
-          }
+        if (empty($data['articles']))
+        {
+            show_404();
+        }
 
 		$this->load->view('templates/header');
 		$this->load->view('article/list_articles', $data);
@@ -53,7 +53,7 @@ class Article_controller extends CI_Controller {
  
         if (empty($data['articles']))
         {
-             show_404();
+            show_404();
         }
 
       $this->load->view('templates/header');
