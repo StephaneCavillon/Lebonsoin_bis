@@ -4,7 +4,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <!-- Main -->
 <div class="ovale"></div>
-<h1 class="title text-center mb-5 ">Bienvenue sur Le Mauvais Coin</h1>
+<div class="text-center mb-5 title">
+	<h1>Bienvenue sur Le Mauvais Coin</h1>
+	<p>Trouvez la bonne affaire parmi la dixaine de petites annonces Le Mauvais Coin</p>
+</div>
+
 
 <div class="container">
 
