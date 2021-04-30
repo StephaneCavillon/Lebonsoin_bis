@@ -40,10 +40,14 @@ class User_controller extends CI_Controller {
                     'password_user' => password_hash($this->input->post('password_user'),PASSWORD_DEFAULT),
                 );
                 $this->user_model->set_user($data);
-                $this->load->view('templates/header', $data);
-                $this->load->view('user/success');
-                $this->load->view('templates/footer');
-            }
+                
+                //////////////////////////
+                // Kevin
+                //////////////////////////
+                $_SESSION['alert'] = '<div class="alert alert-success">Votre compte a bien été créé</div>';
+
+                redirect('home_controller/index', 'refresh');
+                }
         }
 
         public function connection_user_form()
@@ -85,8 +89,13 @@ class User_controller extends CI_Controller {
                 }
 
                 }else{
+                    ///////////////////////////////////////////////////////////////////////////
+                    // KEVIN
+                    ///////////////////////////////////////////////////////////////////////////
 
-                    echo'mail ou mot de passe incorrect';
+                    $_SESSION['alert'] = '<div class="alert alert-danger">Email ou mot de passe incorrect</div>';
+                    redirect('user_controller/connection_user_form', 'refresh');
+                    // echo'mail ou mot de passe incorrect';
                 }
             }
 
@@ -132,6 +141,13 @@ class User_controller extends CI_Controller {
             $this->session->unset_userdata('pseudo');
             $this->session->unset_userdata('id');
 
+            //////////////////////////
+            // Kevin
+            //////////////////////////
+            $_SESSION['alert'] = '<div class="alert alert-success">Votre compte a bien été supprimé</div>';
+
+            redirect('home_controller/index', 'refresh');
+
         }
 
 
@@ -159,8 +175,9 @@ class User_controller extends CI_Controller {
                 $isUniquePseudo = '|is_unique[user.pseudo]';
             }
 
-            $this->form_validation->set_rules('pseudo', 'Pseudo', 'trim'.$isUniquePseudo);
-            $this->form_validation->set_rules('mail', 'Email', 'trim'.$isUniqueMail);
+            $this->form_validation->set_message('is_unique', 'Ce {field} existe déjà');
+            $this->form_validation->set_rules('pseudo', 'pseudo', 'trim'.$isUniquePseudo);
+            $this->form_validation->set_rules('mail', 'mail', 'trim'.$isUniqueMail);
             $this->form_validation->set_rules('birthdate', 'Date de naissance', 'trim');
 
             if ($this->form_validation->run() === FALSE)
@@ -185,6 +202,8 @@ class User_controller extends CI_Controller {
 
                 $this->session->set_userdata('pseudo', $this->input->post('pseudo'));
                 $this->session->has_userdata('pseudo');
+
+                $_SESSION['alert'] = '<div class="alert alert-success">Vos informations ont bien été modifiées</div>';
 
                 redirect('user_controller/view_user', 'refresh');
             }

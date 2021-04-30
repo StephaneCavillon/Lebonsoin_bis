@@ -1,7 +1,14 @@
 <?php echo validation_errors();?>
 
-
 <div class="container">
+
+<?php 
+if (isset($_SESSION['alert'])) {
+	echo $_SESSION['alert'];
+	$_SESSION['alert'] = '';
+}
+?>
+
 	<div class="row mb-5">
 		<div class="mx-auto">
 			<h2 class=" m-auto"><?php echo $title; ?></h2>
@@ -22,8 +29,8 @@
 					value="<?=$passwd ?? ''?>" required>
 				<div id="password_error" class="form-text formError"><?= $errorsArray['password_error'] ?? ''?></div>
 			</div>
-            <div class="text-right">
-			    <button type="submit" name="inscription" class="btn btn-success ">Valider</button>
+            <div class="text-right mb-3">
+				<button type="submit" name="inscription" class="btn btn-success ">Valider</button>
             </div>
             <div>
                 <a href="<?= base_url('index.php/user_controller/register_user_form')?>">Pas encore inscrit ? Inscrivez-vous !</a>

@@ -27,6 +27,12 @@ li {
 	list-style-type: none;
 }
 
+.form-control {
+	border-color: var(--bdazzled-blue);
+	border-radius: 2px;
+}
+
+
 /* Scrollbar */
 
 ::-webkit-scrollbar-track {
@@ -88,6 +94,10 @@ li {
 	box-shadow: 0 0 0 0.2rem rgb(52 86 139 / 50%)
 }
 
+.btn-secondary {
+	border-radius: 2px;
+}
+
 
 /* BARRE DE MENU */
 
@@ -104,16 +114,12 @@ li {
 	background-color: #FFF;
 }
 
-.form-control {
-	border-color: var(--bdazzled-blue);
-	border-radius: 2px;
-}
-
 
 /* CARD */
 
 .card {
 	border-radius: 2px;
+	border: none;
 	width: 100%;
     height: 350px;
 	background-color: #FFF;
@@ -121,9 +127,22 @@ li {
 
 .div {
 	background-color: #FFF;
-
 }
 
+
+/* MODALES */
+
+.modal-content {
+	border-radius: 2px;
+	border: none;
+}
+
+/* ALERTE */
+
+.alert-success, .alert-danger {
+	border: none!important;
+	border-radius: 2px!important;
+}
 
 /* FOOTER */
 

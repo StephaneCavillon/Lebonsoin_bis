@@ -18,13 +18,13 @@
 						<h5 class="widget-title">Liens<span></span></h5>
 						<ul class="thumbnail-widget">
 							<li>
-								<div class="thumb-content"><a href="#.">Mon compte</a></div>
+								<div class="thumb-content"><a href="<?=base_url('index.php/user_controller/view_user')?>">Mon compte</a></div>
 							</li>
 							<li>
-								<div class="thumb-content"><a href="#.">S'inscrire</a></div>
+								<div class="thumb-content"><a href="<?=base_url('index.php/user_controller/register_user_form')?>">S'inscrire</a></div>
 							</li>
 							<li>
-								<div class="thumb-content"><a href="#.">About</a></div>
+								<div class="thumb-content"><a href="<?=base_url('index.php/home_controller/about')?>">About</a></div>
 							</li>
 						</ul>
 					</div>
