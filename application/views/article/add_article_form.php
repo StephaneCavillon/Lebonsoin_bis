@@ -18,7 +18,7 @@
                     echo form_dropdown('id_category', $optionsMark, '' ,array(
                         'class'       => 'form-control',
                     ));
-                    echo form_error ( 'id_Category' ,  '<div class = "text-danger">' ,  '</div>' );
+                    echo form_error ( 'id_category' ,  '<div class = "text-danger">' ,  '</div>' );
 
                     echo form_label('Titre'); 
                     echo form_input(array('id'=>'title','class'=>'form-control','name'=>'title' , 'value' => set_value( 'title' ))); 
@@ -27,6 +27,12 @@
                     echo form_label('Description'); 
                     echo form_textarea(array('id'=>'description_cat','class'=>'form-control','name'=>'description_cat' , 'value' => set_value( 'description_cat' )));
                     echo form_error ( 'description_cat' ,  '<div class = "text-danger">' ,  '</div>' );
+
+                    ?>
+
+                </div>
+                <div class="col-12 col-md-6 d-flex flex-column">
+                <?php
 
                     echo form_label('Prix'); 
                     echo form_input(array('id'=>'price','class'=>'form-control','name'=>'price', 'value' => set_value( 'price'))); 
@@ -43,13 +49,6 @@
                     echo form_label('Téléphone'); 
                     echo form_input(array('id'=>'phone','class'=>'form-control','name'=>'phone', 'value' => set_value( 'phone'))); 
                     echo form_error ( 'phone' ,  '<div class = "text-danger">' ,  '</div>' );
-
-
-                    ?>
-
-                </div>
-                <div class="col-12 col-md-6 d-flex flex-column">
-                <?php
 
 
                     // Image 

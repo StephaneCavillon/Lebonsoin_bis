@@ -7,6 +7,8 @@ class Article_controller extends CI_Controller {
      {
           parent::__construct();
           $this->load->model('Article_model');
+          $this->load->model('Category_model');
+
      }
 
      public function add_article(){
@@ -20,7 +22,8 @@ class Article_controller extends CI_Controller {
                $id_vendeur = $_SESSION['id'];
                if( $this->form_validation->run() == FALSE ) // Formulaire invalide
                { 
-                    $this->load->model('Category_model');
+                    var_dump('error form');
+                    var_dump($_POST);
                     $data['categorys'] = $this->Category_model->select_all();
                     $data['idVendeur'] = $id_vendeur;
      
@@ -31,19 +34,53 @@ class Article_controller extends CI_Controller {
                } 
                else // Le formulaire est valide
                { 
-                    $data = array( 
-                         'title' => $this->input->post('title'),
-                         'description_art' => $this->input->post('description_art'),
-                         'price' => $this->input->post('price'),
-                         'created_at' => '',
-                         'zipcode' => $this->input->post('zipcode'),
-                         'city' => $this->input->post('city'),
-                         'phone' => $this->input->post('phone'),
-                         'id_user' => $id_vendeur,
-                         'id_category' => $this->input->post('category'),
-                    ); 
-                    $this->Article_model->insert($data);
-                    redirect("user_controller/view_user/");
+                    var_dump('else');
+                    // Enregistrement de l'image
+                    $config['upload_path']          = './assets/uppload';
+                    $config['allowed_types']        = 'jpg|png|jpeg';
+                    $config['file_name']        = time();
+
+                    $this->load->library('upload', $config);
+
+                    if (!$this->upload->do_upload('url_image')) //Erreur dans l'enregistrement 
+                    {
+                         $data['erreur'] = 'erreur dans l\'importation de l\'image';
+
+                         $data['categorys'] = $this->Category_model->select_all();
+                         $data['idVendeur'] = $id_vendeur;
+          
+                         $data["title"] = "Déposer une annonce";
+                         $this->load->view('templates/header', $data);
+                         $this->load->view('article/add_article_form', $data);
+                         $this->load->view('templates/footer', $data);
+
+                    } else // pas d'erreur
+                    {
+                         var_dump('pas erreur');
+                         $dataPhoto = array(
+
+                              'url_image' => $this->upload->data('file_name'),
+                              'id_article' => $this->input->post('id_Mark'),
+
+                         );
+                         $this->Photo_model->insert($dataPhoto);
+
+                         $data = array( 
+                              'title' => $this->input->post('title'),
+                              'description_art' => $this->input->post('description_art'),
+                              'price' => $this->input->post('price'),
+                              'created_at' => '',
+                              'zipcode' => $this->input->post('zipcode'),
+                              'city' => $this->input->post('city'),
+                              'phone' => $this->input->post('phone'),
+                              'id_user' => $id_vendeur,
+                              'id_category' => $this->input->post('category'),
+                         ); 
+                         
+                         $this->Article_model->insert($data);
+                         redirect("user_controller/view_user/");
+                    }
+
                } 
 
           }
