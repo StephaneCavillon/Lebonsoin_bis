@@ -34,7 +34,7 @@
 					<div class="widget no-box">
 						<h5 class="widget-title">Commencer<span></span></h5>
 						<p>Déposer une annonce en quelques cliques!</p>
-						<a class="btn btn-footer" href="#." target="_blank">Déposer une annonce</a>
+						<a class="btn btn-footer" href="#">Déposer une annonce</a>
 					</div>
 				</div>
 
