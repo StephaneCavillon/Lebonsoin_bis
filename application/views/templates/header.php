@@ -34,10 +34,13 @@
 
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav mr-auto">
-						<li class="nav-item">
+						<li class="nav-item my-auto">
 							<a class="btn btn-success btn-sm" type="button" href="<?=base_url('index.php/article_controller/add_article')?>"><i
 									class="far fa-plus-square"></i>
 								Déposer une annonce</a>
+						</li>
+						<li class="nav-item ml-3">
+							<a class="login-link nav-link" href="<?=base_url('index.php/article_controller/list_articles')?>">Voir toutes les annonces</a>
 						</li>
 						<!-- <form class="form-inline ml-3 my-2 my-lg-0">
 							<input class="form-control mr-sm-2 form-control-sm" type="search" placeholder="Rechercher"
@@ -49,7 +52,7 @@
 					<?php if(empty($_SESSION['pseudo'])){  ?>
 					<ul class="navbar-nav">
 						<li class="nav-item">
-							<a class="login-link nav-link " href="<?=base_url('index.php/user_controller/connection_user_form')?>"><img src="<?=base_url('assets/img/user.png')?>" alt=""> Connexion</a>
+							<a class="login-link nav-link" href="<?=base_url('index.php/user_controller/connection_user_form')?>"><img src="<?=base_url('assets/img/user.png')?>" alt=""> Connexion</a>
 						</li>
 					</ul>
 					<?php }else{?>
