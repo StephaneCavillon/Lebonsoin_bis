@@ -13,7 +13,8 @@
 					<div class="col-12 col-md-3 text-center">
 						<button class="btn btn-success my-3" type="button" data-toggle="collapse"
 							data-target="#collapse">Modifier mes informations</button>
-						<a href="<?=base_url('index.php/user_controller/delete')?>" type="submit" name="del-account" class="text-danger">Supprimer mon compte</a>
+						<a href="" data-toggle="modal"
+                data-target="#delete-account-modal" class="text-danger">Supprimer mon compte</a>
 					</div>
 				</div>
 
@@ -100,4 +101,24 @@
 			</div>
 		</div>
 	</div>
+</div>
+
+<!-- Modale suppression compte -->
+
+<div class="modal fade " id="delete-account-modal" tabindex="-1" aria-labelledby="delete-account-modal-label"
+    data-backdrop="static" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="delete-account-modal-label">Etes-vous sûr de vouloir supprimer votre compte?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                <a type="submit" class="btn btn-footer" href="<?=base_url('index.php/user_controller/delete')?>">Supprimer mon compte</a>
+            </div>
+        </div>
+    </div>
 </div>

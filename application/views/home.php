@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <div class="container">
 
-<h1 class="text-center mb-3">Bienvenue sur Le Mauvais Coin</h1>
+<h1 class="text-center mb-5">Bienvenue sur Le Mauvais Coin</h1>
 
 	<section class="container">
 	

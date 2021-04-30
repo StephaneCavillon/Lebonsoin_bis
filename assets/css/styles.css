@@ -94,6 +94,10 @@ li {
 	box-shadow: 0 0 0 0.2rem rgb(52 86 139 / 50%)
 }
 
+.btn-secondary {
+	border-radius: 2px;
+}
+
 
 /* BARRE DE MENU */
 
@@ -123,6 +127,14 @@ li {
 
 .div {
 	background-color: #FFF;
+}
+
+
+/* MODALES */
+
+.modal-content {
+	border-radius: 2px;
+	border: none;
 }
 
 
