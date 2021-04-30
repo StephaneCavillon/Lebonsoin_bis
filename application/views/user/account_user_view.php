@@ -78,7 +78,7 @@ if (isset($_SESSION['alert'])) {
 								<li class="mb-4">
 									<div class="row  text-center">
 										<div class="col-md-3 mr-auto pl-0">
-											<img class="img-fluid" src="<?=base_url('assets/upload/'.$article_user->id_article.'.jpg')?>" alt=""
+											<img class="img-fluid" src="<?=base_url('assets/upload/'.$article_user->name_img)?>" alt=""
 												width="100%">
 										</div>
 										<div class="col-md-6">
@@ -86,7 +86,7 @@ if (isset($_SESSION['alert'])) {
 												<h3><a href=""><?=$article_user->title?></a></h3>
 											</div>
 											<div class="row">
-												<p><strong><?=$article_user->price?></strong></p>
+												<p><strong><?=$article_user->price?> €</strong></p>
 											</div>
 											<div class="row">
 												<p><?=$article_user->name_cat?></p>
