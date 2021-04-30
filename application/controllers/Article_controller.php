@@ -15,15 +15,13 @@ class Article_controller extends CI_Controller {
           
           if(empty($_SESSION['id'])){
 
-               redirect("user_controller/connection_user_form");
+               redirect("index.php/user_controller/connection_user_form");
 
           }else{
 
                $id_vendeur = $_SESSION['id'];
                if( $this->form_validation->run() == FALSE ) // Formulaire invalide
                { 
-                    var_dump('error form');
-                    var_dump($_POST);
                     $data['categorys'] = $this->Category_model->select_all();
                     $data['idVendeur'] = $id_vendeur;
      
@@ -34,7 +32,6 @@ class Article_controller extends CI_Controller {
                } 
                else // Le formulaire est valide
                { 
-                    var_dump('else');
                     // Enregistrement de l'image
                     $config['upload_path']          = './assets/uppload';
                     $config['allowed_types']        = 'jpg|png|jpeg';
