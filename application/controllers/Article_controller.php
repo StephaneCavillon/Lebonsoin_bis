@@ -53,7 +53,7 @@ class Article_controller extends CI_Controller {
      public function list_articles(){
           $data['title']= 'Liste des Articles';
 
-          $data['articles'] = $this->Article_model->get_article();
+          $data['articles'] = $this->Article_model->get_list_articles();
 
           if (empty($data['articles']))
           {
@@ -66,8 +66,22 @@ class Article_controller extends CI_Controller {
 
      }
 
-     public function view_article(){
-          $data['title']= '';
+     public function view_article($id = NULL){
+          
+          $data['article'] = $this->Article_model->get_article($id);
+
+          if (empty($data['article']))
+          {
+               show_404();
+          }
+          var_dump($data['article']);
+          // $data['title']=$data['article']->$title;
+
+          $this->load->view('templates/header');
+		$this->load->view('article/article', $data);
+		$this->load->view('templates/footer');
+
+
 
      }
 

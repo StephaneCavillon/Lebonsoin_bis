@@ -42,8 +42,9 @@
                     <input type="password" class="form-control" id="confirmPassword" name="confirmPassword"  title='Le mot de passe doit contenir au moins 10 caractères dont 2 majuscules, 1minuscule et 2 chiffres. Les caractères spéciaux ne sont pas autorisés'value="<?=$confirmPassword ?? ''?>" required>
                     <div id="confirm_password_error" class="form-text formError"><?= $errorsArray['confirm_password_error'] ?? ''?></div>
                 </div>
-                
-                <button type="submit" name ="inscription" class="btn btn-success">Valider</button>
+                <div class="text-right">
+                    <button type="submit" name ="inscription" class="btn btn-success">Valider</button>
+                </div>
             </form>
         </div>
     </div>  

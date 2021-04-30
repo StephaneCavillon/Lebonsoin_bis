@@ -4,15 +4,16 @@
 	<!-- Mes infos -->
 	<div class="row mb-3">
 		<div class="col">
-			<div class="shadow p-1">
+			<div class="shadow p-1 div">
 				<div class="row p-2 m-2">
 					<div class="col-sm-12 col-lg-9">
 						<h5 class="card-title"><?=$user[0]->pseudo ?? ''?></h5>
 						<p><?=$user[0]->mail ?? ''?></p>
 					</div>
-					<div class="col-sm-12 col-lg-3">
+					<div class="col-sm-12 col-lg-3 text-center">
 						<button class="btn btn-success mt-3" type="button" data-toggle="collapse"
 							data-target="#collapse">Modifier mes informations</button>
+						<a href="<?=base_url('index.php/user_controller/delete')?>" type="submit" name="del-account" class="text-danger">Supprimer mon compte</a>
 					</div>
 				</div>
 
@@ -39,7 +40,6 @@
 							</div>
 							<div class="row p-2 justify-content-center">
 								<div class="col mt-3">
-									<a href="<?=base_url('index.php/user_controller/delete')?>" type="submit" name="del-account" class="btn btn-footer">Supprimer mon compte</a>
 									<button type="submit" name="submit" class="btn btn-success">Sauvegarder</button>
 								</div>
 							</div>
@@ -57,7 +57,7 @@
 	<div class="row mb-5">
 		<div class="col">
 
-			<div class="shadow p-1">
+			<div class="shadow p-1 div">
 				<h2 class="p-2">Mes annonces</h2>
 				<div class="container">
 					<div class="row">
