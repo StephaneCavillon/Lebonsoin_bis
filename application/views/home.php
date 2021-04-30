@@ -23,7 +23,7 @@ if (isset($_SESSION['alert'])) {
 
 			<div class="col-12 col-md-3">
 				<div class="card shadow mb-3">
-					<a href="<?= base_url('article/controller/view_article/'.$article->id) ?? ''?>"><img src="<?= base_url('assets/upload/').$article->name_img ?? ''?>" class="card-img-top" width="'100%" height="200px" alt="<?=$article->title ?? ''?>"></a>
+					<a href="<?= base_url('index.php/article_controller/view_article/'.$article->id_article) ?? ''?>"><img src="<?= base_url('assets/upload/').$article->name_img ?? ''?>" class="card-img-top" width="'100%" height="200px" alt="<?=$article->title ?? ''?>"></a>
 					<div class="card-body">
 						<h5 class="card-title article-title"><?=$article->title ?? ''?></h5>
 						<p class="card-text price"><?=$article->price ?? ''?> €</p>
