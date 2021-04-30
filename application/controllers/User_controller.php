@@ -121,6 +121,7 @@ class User_controller extends CI_Controller {
 //////////////////// lau
         public  function deconnection(){
             $this->session->unset_userdata('pseudo');
+            $this->session->unset_userdata('id');
             redirect('home_controller/index', 'refresh');
 
         }
@@ -128,6 +129,8 @@ class User_controller extends CI_Controller {
         public function delete(){
             $id = $_SESSION['id'];
             $this->user_model->delete($id);
+            $this->session->unset_userdata('pseudo');
+            $this->session->unset_userdata('id');
 
         }
 
