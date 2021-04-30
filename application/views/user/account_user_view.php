@@ -21,7 +21,7 @@
 
 						<?= validation_errors() ?>
 
-						<?= form_open('user/edit_user/'.$user[0]->id) ?>
+						<?= form_open('user_controller/update_user/') ?>
 
 						<div class="row m-3 p-2">
 							<div class="col-md-4">
@@ -39,6 +39,7 @@
 							</div>
 							<div class="row p-2 justify-content-center">
 								<div class="col mt-3">
+									<a href="<?=base_url('index.php/user_controller/delete')?>" type="submit" name="del-account" class="btn btn-footer">Supprimer mon compte</a>
 									<button type="submit" name="submit" class="btn btn-success">Sauvegarder</button>
 								</div>
 							</div>

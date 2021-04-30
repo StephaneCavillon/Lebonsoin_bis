@@ -14,7 +14,7 @@ class User_controller extends CI_Controller {
             $this->load->helper('form');
             
             $this->load->library('form_validation');
-             $data['title'] = 'Inscrivez vous';
+            $data['title'] = 'Inscrivez vous';
             $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
             $this->form_validation->set_rules('pseudo', 'Pseudo', 'trim|required|is_unique[user.pseudo]');
             $this->form_validation->set_rules('confirmMail', 'confirmation mail', 'trim|required');
@@ -45,6 +45,7 @@ class User_controller extends CI_Controller {
                 $this->load->view('templates/footer');
             }
         }
+
         public function connection_user_form()
         {
             $this->load->helper('form');
@@ -66,26 +67,23 @@ class User_controller extends CI_Controller {
                 $data['title'] = 'Connectez vous';
                 $mail =  $this->input->post('mail');
                     
-              
+            
                 $m = $this->user_model->mail_exist($mail);
     
                 if($m == true){
                     $password_input = $this->input->post('password_user');
                     $password_hash =  $this->user_model->get_user($mail);
                     
-                  if(password_verify($password_input, $password_hash[0]->password_user))
-                  {
+                if(password_verify($password_input, $password_hash[0]->password_user)) {
+                    $this->session->set_userdata('id', $password_hash[0]->id);
                     $this->session->set_userdata('pseudo', $password_hash[0]->pseudo);
-                    $this->session->has_userdata('pseudo');  
-                
-                  }
+                    $this->session->has_userdata('pseudo');
+                    $this->session->has_userdata('id');
 
-                    $data['title'] = 'Connectez vous';
-                    $this->load->view('templates/header', $data);
-                    $this->load->view('user/connection_user_form',$data);
-                    $this->load->view('templates/footer');
-                    
-                    
+
+                    redirect('home_controller/index', 'refresh');
+                }
+
                 }else{
 
                     echo'mail ou mot de passe incorrect';
@@ -100,16 +98,30 @@ class User_controller extends CI_Controller {
         ///////////////////////////////////////////////////////////////////////////
 
         public function view_user() {
-            $id = $_SESSION['id'];
-            $data['user'] = $this->user_model->get_one_user($id);
 
-            $this->load->view('templates/header');
-            $this->load->view('user/account_user_view', $data);
-            $this->load->view('templates/footer');
+            if (!empty($_SESSION['id'])) {
+
+                $id = $_SESSION['id'];
+
+                $data['user'] = $this->user_model->get_one_user($id);
+
+                $this->load->view('templates/header');
+                $this->load->view('user/account_user_view', $data);
+                $this->load->view('templates/footer');
+
+            } else {
+
+                $data['title'] = 'Connectez vous';
+                $this->load->view('templates/header', $data);
+                $this->load->view('user/connection_user_form');
+                $this->load->view('templates/footer');
+
+            }    
         }
 //////////////////// lau
         public  function deconnection(){
             $this->session->unset_userdata('pseudo');
+            $this->session->unset_userdata('id');
             redirect('home_controller/index', 'refresh');
 
         }
@@ -117,11 +129,48 @@ class User_controller extends CI_Controller {
         public function delete(){
             $id = $_SESSION['id'];
             $this->user_model->delete($id);
+            $this->session->unset_userdata('pseudo');
+            $this->session->unset_userdata('id');
 
         }
 
 
+        public function update_user() {
 
+            $id = $_SESSION['id'];
+            $data['user'] = $this->user_model->get_one_user($id);
 
+            $this->load->helper('form');
+            $this->load->library('form_validation');
+
+            $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
+
+            $this->form_validation->set_rules('pseudo', 'Pseudo', 'trim|is_unique[user.pseudo]');
+            $this->form_validation->set_rules('mail', 'Mail', 'trim|is_unique[user.mail]');
+            $this->form_validation->set_rules('birthdate', 'Birthdate', 'trim');
+
+            if ($this->form_validation->run() === FALSE)
+            {
+                $this->load->view('templates/header');
+                $this->load->view('user/account_user_view');
+                $this->load->view('templates/footer');
+
+            } else {
+
+                $data = array(
+                    'pseudo' => $this->input->post('pseudo'),
+                    'mail' =>$this->input->post('mail'),
+                    'birthdate' => $this->input->post('birthdate'),
+                );
+
+                $id = $_SESSION['id'];
+
+                $user['user'] = $this->user_model->get_one_user($id);
+
+                $this->user_model->update_user($data, $id);
+
+                redirect('user_controller/view_user', 'refresh');
+            }
+        }
 
     }
