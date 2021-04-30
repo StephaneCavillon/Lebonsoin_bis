@@ -19,7 +19,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
             </div>
         </div>
-        <div class="col-12 col-md-4 d-md-flex flex-column align-items-end shadow border" id="contact">
+        <div class="col-12 col-md-4 d-md-flex flex-column align-items-end shadow border div" id="contact">
             <div class="mt-3">Vendeur: <?= $article[0]->pseudo?></div>
             <?php if(!empty($article[0]->phone)):?>
                 <div class="mt-3">Mail: <?=$article[0]->mail?></div>
