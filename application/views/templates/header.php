@@ -35,7 +35,7 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav mr-auto">
 						<li class="nav-item my-auto">
-							<a class="btn btn-success btn-sm" type="button" href="<?=base_url('index.php/article_controller/add_article')?>"><i
+							<a class="btn btn-footer btn-sm" type="button" href="<?=base_url('index.php/article_controller/add_article')?>"><i
 									class="far fa-plus-square"></i>
 								Déposer une annonce</a>
 						</li>
