@@ -6,8 +6,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <div class="container">
     <div class="row">
-        <div class="col-8">
-            <div class="card" >
+        <div class="col-12 col-md-8">
+            <div class="" >
                 <img class="card-img-top" src="<?= (base_url('assets/upload/').$article[0]->name_img) ?? ''?>" alt="<?=$article[0]->title ?? ''?>" height="100%">
                 <div class="card-body ">
                     <h5 class="card-title"><?= $article[0]->title ?? ''?></h5>
@@ -18,13 +18,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
             </div>
         </div>
-        <div class="col-4 d-flex flex-column align-items-end justify-content-end shadow border">
+        <div class="col-12 col-md-4 d-md-flex flex-column align-items-end shadow border" id="contact">
             <div class="mt-3">Vendeur: <?= $article[0]->pseudo?></div>
             <?php if(!empty($article[0]->phone)):?>
                 <div class="mt-3">Mail: <?=$article[0]->mail?></div>
             <?php endif?>
             <div class="mt-3">Contact: <?= $article[0]->phone ?? $article[0]->mail?></div>
-            <div><a href="">Voir les annonces de ce vendeur</a></div>
+            <div class="mt-3"><a href="">Voir les annonces de ce vendeur</a></div>
         </div>
     </div>
 </div>
