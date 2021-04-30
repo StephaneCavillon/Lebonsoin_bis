@@ -6,9 +6,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <div class="container">
 
-<h1 class="text-center mb-5">Bienvenue sur Le Mauvais Coin</h1>
+<h1 class="text-center mb-3">Bienvenue sur Le Mauvais Coin</h1>
 
-	<div class="container">
+	<section class="container">
 	
 		<div class="row mb-5">
 
@@ -28,6 +28,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			
 		</div>
 
-	</div>
+		</section>
+
+	<!-- Présentation -->
+
+	<section class="container">
+		<p class="mb-5 text-center">Avec Le Mauvais Coin, trouvez la bonne affaire sur le site référent de petites annonces de particulier à particuliers. Avec une dixaine de petites annonces, trouvez la bonne occasion dans nos catégories voiture, immobilier, emploi, vacances, mode, maison, jeux vidéo, etc… Déposez une annonce gratuite en toute simplicité pour vendre, rechercher, donner vos biens de seconde main ou promouvoir vos services.
+		</p>
+	</section>
 
 </div>
