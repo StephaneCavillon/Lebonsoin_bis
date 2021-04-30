@@ -65,7 +65,8 @@ class Article_model extends CI_Model {
 
 	}
 
-	public function delete(){
+	public function delete($id){
 		
+		return $this->db->delete('article', array('id' => $id));
 	}
 }
