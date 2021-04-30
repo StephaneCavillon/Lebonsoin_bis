@@ -371,3 +371,11 @@ ul.social-footer2 li a {
 	border-color: var(--burnt-sienna);
 	color: var(--burnt-sienna);
 }
+
+/*==================== 
+    Article view 
+====================== */
+
+#contact{
+	height: 200px;
+}

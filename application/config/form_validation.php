@@ -1,4 +1,5 @@
 <?php
+var_dump('je suis dans le form validation');
 $config = array ( 
 
     'Article_controller/add_article'  =>  array ( 
@@ -8,7 +9,7 @@ $config = array (
             'label'  =>  'titre' , 
             'rules'  =>  array(
                 'required',
-                'max_length[30]'
+                // 'max_length[30]'
             ),
             'errors' => array(
                 'required' => 'Le titre de l\'annonce est obligatoire',
@@ -19,7 +20,7 @@ $config = array (
             'label'  =>  'description' , 
             'rules'  =>  array(
                 'required',
-                'max_length[300]',
+                // 'max_length[300]',
             ),
         ),
         array ( 
@@ -27,7 +28,7 @@ $config = array (
             'label'  =>  'prix',
             'rules'  =>  array(
                 'required',
-                'numeric'
+                // 'numeric'
             ), 
         ), 
         array ( 
@@ -35,8 +36,8 @@ $config = array (
             'label' =>  'code postal' , 
             'rules' =>  array(
                 'required' ,
-                'max_length[8]',
-                'numeric'
+                // 'max_length[8]',
+                // 'numeric'
             ),
         ),
         array ( 
@@ -44,8 +45,8 @@ $config = array (
             'label'  =>  'ville' , 
             'rules'  =>  array(
                 'required',
-                'max_length[50]',
-                'alpha_dash'
+                // 'max_length[50]',
+                // 'alpha_dash'
             ),
         ),
         array ( 
@@ -54,12 +55,12 @@ $config = array (
             'label'  =>  'numero de téléphone' , 
             'rules'  =>  array(
                 'required',
-                'max_length[12]',
+                // 'max_length[12]',
             ),
         ),
         array ( 
 
-            'field'  =>  'category' , 
+            'field'  =>  'id_category' , 
             'label'  =>  'categorie' , 
             'rules'  =>  array(
                 'required',
