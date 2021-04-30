@@ -175,8 +175,9 @@ class User_controller extends CI_Controller {
                 $isUniquePseudo = '|is_unique[user.pseudo]';
             }
 
-            $this->form_validation->set_rules('pseudo', 'Pseudo', 'trim'.$isUniquePseudo);
-            $this->form_validation->set_rules('mail', 'Email', 'trim'.$isUniqueMail);
+            $this->form_validation->set_message('is_unique', 'Ce {field} existe déjà');
+            $this->form_validation->set_rules('pseudo', 'pseudo', 'trim'.$isUniquePseudo);
+            $this->form_validation->set_rules('mail', 'mail', 'trim'.$isUniqueMail);
             $this->form_validation->set_rules('birthdate', 'Date de naissance', 'trim');
 
             if ($this->form_validation->run() === FALSE)
@@ -201,6 +202,8 @@ class User_controller extends CI_Controller {
 
                 $this->session->set_userdata('pseudo', $this->input->post('pseudo'));
                 $this->session->has_userdata('pseudo');
+
+                $_SESSION['alert'] = '<div class="alert alert-success">Vos informations ont bien été modifiées</div>';
 
                 redirect('user_controller/view_user', 'refresh');
             }

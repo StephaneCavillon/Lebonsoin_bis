@@ -1,4 +1,11 @@
 <div class="container">
+<?= validation_errors() ?>
+<?php 
+if (isset($_SESSION['alert'])) {
+	echo $_SESSION['alert'];
+	$_SESSION['alert'] = '';
+}
+?>
 
 	<h1 class="mb-3">Mon compte</h1>
 	<!-- Mes infos -->
@@ -20,8 +27,6 @@
 
 				<div class="collapse m-3 p-3 shadow" id="collapse">
 					<div>
-
-						<?= validation_errors() ?>
 
 						<?= form_open('user_controller/update_user/') ?>
 

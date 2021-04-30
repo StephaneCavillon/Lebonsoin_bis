@@ -137,6 +137,12 @@ li {
 	border: none;
 }
 
+/* ALERTE */
+
+.alert-success, .alert-danger {
+	border: none!important;
+	border-radius: 2px!important;
+}
 
 /* FOOTER */
 
