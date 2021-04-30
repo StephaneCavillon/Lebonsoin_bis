@@ -25,7 +25,7 @@ if (isset($_SESSION['alert'])) {
 
 		<?php foreach($articles as $article): ?>
 
-			<div class="col-12 col-md-3">
+			<div class="col-12 col-md-6 col-lg-3">
 				<div class="card shadow mb-3">
 					<a href="<?= base_url('index.php/article_controller/view_article/'.$article->id_article) ?? ''?>"><img src="<?= base_url('assets/upload/').$article->name_img ?? ''?>" class="card-img-top" width="'100%" height="200px" alt="<?=$article->title ?? ''?>"></a>
 					<div class="card-body">
