@@ -35,9 +35,9 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav mr-auto">
 						<li class="nav-item">
-							<button class="btn btn-success btn-sm" type="button" href="#"><i
+							<a class="btn btn-success btn-sm" type="button" href="<?=base_url('index.php/article_controller/add_article')?>"><i
 									class="far fa-plus-square"></i>
-								Déposer une annonce</button>
+								Déposer une annonce</a>
 						</li>
 						<!-- <form class="form-inline ml-3 my-2 my-lg-0">
 							<input class="form-control mr-sm-2 form-control-sm" type="search" placeholder="Rechercher"

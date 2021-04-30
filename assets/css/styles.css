@@ -49,6 +49,10 @@ li {
 	border-radius: 2px;
 }
 
+textarea {
+	resize: none;
+}
+
 
 /* Scrollbar */
 
