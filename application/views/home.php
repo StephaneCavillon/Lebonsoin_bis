@@ -6,6 +6,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <div class="container">
 
+<?php 
+if (isset($_SESSION['alert'])) {
+	echo $_SESSION['alert'];
+	$_SESSION['alert'] = '';
+}
+?>
+
 <h1 class="text-center mb-5">Bienvenue sur Le Mauvais Coin</h1>
 
 	<section class="container">

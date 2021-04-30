@@ -132,6 +132,13 @@ class User_controller extends CI_Controller {
             $this->session->unset_userdata('pseudo');
             $this->session->unset_userdata('id');
 
+            //////////////////////////
+            // Kevin
+            //////////////////////////
+            $_SESSION['alert'] = '<div class="alert alert-success">Votre compte a bien été supprimé</div>';
+
+            redirect('home_controller/index', 'refresh');
+
         }
 
 
