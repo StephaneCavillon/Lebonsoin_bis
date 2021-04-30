@@ -14,7 +14,7 @@
 
                         $optionsMark[$category['id']] = $category['name_cat'];
                     }
-                    echo form_label('Category'); 
+                    echo form_label('Catégorie'); 
                     echo form_dropdown('id_category', $optionsMark, '' ,array(
                         'class'       => 'form-control',
                     ));
