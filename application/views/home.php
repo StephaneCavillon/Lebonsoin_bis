@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="ovale"></div>
 <div class="text-center mb-5 title">
 	<h1>Bienvenue sur Le Mauvais Coin</h1>
-	<p>Trouvez la bonne affaire parmi la dixaine de petites annonces Le Mauvais Coin</p>
+	<p>Trouvez la bonne affaire parmi la dizaine de petites annonces Le Mauvais Coin</p>
 </div>
 
 
@@ -44,7 +44,7 @@ if (isset($_SESSION['alert'])) {
 	<!-- Présentation -->
 
 	<section class="container">
-		<p class="mb-5 text-center">Avec Le Mauvais Coin, trouvez la bonne affaire sur le site référent de petites annonces de particulier à particuliers. Avec une dixaine de petites annonces, trouvez la bonne occasion dans nos catégories voiture, immobilier, emploi, vacances, mode, maison, jeux vidéo, etc… Déposez une annonce gratuite en toute simplicité pour vendre, rechercher, donner vos biens de seconde main ou promouvoir vos services.
+		<p class="mb-5 text-center">Avec Le Mauvais Coin, trouvez la bonne affaire sur le site référent de petites annonces de particulier à particuliers. Avec une dizaine de petites annonces, trouvez la bonne occasion dans nos catégories voiture, immobilier, emploi, vacances, mode, maison, jeux vidéo, etc… Déposez une annonce gratuite en toute simplicité pour vendre, rechercher, donner vos biens de seconde main ou promouvoir vos services.
 		</p>
 	</section>
 

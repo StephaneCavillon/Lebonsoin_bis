@@ -3,7 +3,7 @@
 	<div class="mb-5">
 		<h2 class="text-center mb-3">La Mauvais Coin c'est quoi?</h2>
 		<p class="text-justify">Avec Le Mauvais Coin, trouvez la bonne affaire sur le site référent de petites annonces de particulier à
-			particuliers. Avec une dixaine de petites annonces, trouvez la bonne occasion dans nos catégories voiture,
+			particuliers. Avec une dizaine de petites annonces, trouvez la bonne occasion dans nos catégories voiture,
 			immobilier, emploi, vacances, mode, maison, jeux vidéo, etc… Déposez une annonce gratuite en toute
 			simplicité pour vendre, rechercher, donner vos biens de seconde main ou promouvoir vos services.</p>
 	</div>

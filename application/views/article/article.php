@@ -8,7 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="row">
         <div class="col-12 col-md-8">
             <div class="" >
-                <img class="card-img-top" src="<?= (base_url('assets/upload/').$article[0]->name_img) ?? ''?>" alt="<?=$article[0]->title ?? ''?>" height="100%">
+                <img class="card-img-top" src="<?= (base_url('assets/upload/').$article[0]->name_img) ?? ''?>" alt="<?=$article[0]->title ?? ''?>">
                 <div class="card-body ">
                     <h5 class="card-title"><?= $article[0]->title ?? ''?></h5>
                     <div class=""> <?= $article[0]->name_cat.' - '.$article[0]->city?>  </div>

@@ -92,14 +92,14 @@ if (isset($_SESSION['alert'])) {
 												<p><?=$article_user->name_cat?></p>
 											</div>
 											<div class="row mb-3">
-												<a href="<?=base_url('index.php/article_controller/edit_article/'.$article_user->id_article)?>"
-													class="btn btn-success">Modifier</a>
+												<!-- <a href="<?=base_url('index.php/article_controller/edit_article/'.$article_user->id_article)?>"
+													class="btn btn-success">Modifier</a> -->
 												<a href="<?=base_url('index.php/article_controller/delete/'.$article_user->id_article)?>"
 													class="btn btn-footer ml-2">Supprimer</a>
 											</div>
 										</div>
 										<div class="col-md-3">
-											<p>Publié le <?=$article_user->created_at?></p>
+											<p>Publié le <?=date('d/m/Y à H\hm', strtotime($article_user->created_at))?></p>
 										</div>
 									</div>
 								</li>

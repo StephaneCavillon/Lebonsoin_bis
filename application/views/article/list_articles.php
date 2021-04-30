@@ -14,7 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 		<?php foreach($articles as $article): ?>
 
-			<div class="row border border-dark rounded py-2 mt-2">
+			<div class="row py-2 mt-2 div shadow">
 				<div class="col-4 d-flex align-items-between">
 				<a href="<?=base_url('/index.php/Article_controller/view_article/'.$article->id)?>"><img src="<?= base_url('assets/upload/').$article->name_img ?? ''?>" class="img-fluid rounded " width="150px" alt="<?=$article->title ?? ''?>"></a>
 				</div>

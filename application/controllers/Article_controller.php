@@ -24,8 +24,6 @@ class Article_controller extends CI_Controller {
                $id_vendeur = $_SESSION['id'];
                if( $this->form_validation->run() == FALSE ) // Formulaire invalide
                { 
-                    var_dump('error form');
-                    var_dump($_POST);
                     $data['categorys'] = $this->Category_model->select_all();
                     $data['idVendeur'] = $id_vendeur;
      
@@ -36,7 +34,6 @@ class Article_controller extends CI_Controller {
                } 
                else // Le formulaire est valide
                { 
-                    var_dump('else');
                     // Enregistrement de l'image
                     $config['upload_path']          = './assets/upload';
                     $config['allowed_types']        = 'jpg|png|jpeg';
@@ -58,7 +55,6 @@ class Article_controller extends CI_Controller {
 
                     } else // pas d'erreur
                     {
-                         var_dump('pas erreur');
 
                          $data = array( 
                               'title' => $this->input->post('title'),
@@ -73,7 +69,6 @@ class Article_controller extends CI_Controller {
                          ); 
                          
                          $this->Article_model->insert($data);
-                         var_dump($this->db->insert_id());
 
                          $dataPhoto = array(
 
@@ -82,6 +77,9 @@ class Article_controller extends CI_Controller {
 
                          );
                          $this->Photo_model->insert($dataPhoto);
+
+                         $_SESSION['alert'] = '<div class="alert alert-success">Votre annonce a bien été publiée</div>';
+
                          redirect("user_controller/view_user/");
                     }
 
