@@ -36,8 +36,7 @@ class Article_controller extends CI_Controller {
         {
             show_404();
         }
-        var_dump($data['article']);
-        // $data['title']=$data['article']->$title;
+        $data['title']=$data['article'][0]->title;
 
         $this->load->view('templates/header');
 		$this->load->view('article/article', $data);
