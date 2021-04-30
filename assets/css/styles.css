@@ -383,3 +383,14 @@ ul.social-footer2 li a {
 #contact{
 	height: 200px;
 }
+
+
+/* Media Queries */
+
+@media (max-width: 991px) {
+	
+	.ovale {
+		/* display: none; */
+		border-radius: 100% / 50px;
+	}
+}
