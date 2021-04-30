@@ -25,8 +25,8 @@
                     echo form_error ( 'title' ,  '<div class = "text-danger">' ,  '</div>' );
 
                     echo form_label('Description'); 
-                    echo form_textarea(array('id'=>'description_cat','class'=>'form-control','name'=>'description_cat' , 'value' => set_value( 'description_cat' )));
-                    echo form_error ( 'description_cat' ,  '<div class = "text-danger">' ,  '</div>' );
+                    echo form_textarea(array('id'=>'description_art','class'=>'form-control','name'=>'description_art' , 'value' => set_value( 'description_art' )));
+                    echo form_error ( 'description_art' ,  '<div class = "text-danger">' ,  '</div>' );
 
                     ?>
 
@@ -54,7 +54,7 @@
                     // Image 
                     echo form_label('Photo'); 
                     ?>
-                    <input type="file" name="url_image" />
+                    <input type="file" name="name_img" />
                     <?php
                     echo $erreur ?? '';
 

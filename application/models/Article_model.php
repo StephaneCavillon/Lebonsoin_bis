@@ -69,4 +69,9 @@ class Article_model extends CI_Model {
 		
 		return $this->db->delete('article', array('id' => $id));
 	}
+
+	public function insert($data)
+    {
+        return $this->db->insert('article', $data);
+    }
 }

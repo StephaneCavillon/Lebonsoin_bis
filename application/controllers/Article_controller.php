@@ -8,6 +8,8 @@ class Article_controller extends CI_Controller {
                parent::__construct();
                $this->load->model('Article_model');
                $this->load->model('Category_model');
+               $this->load->model('Photo_model');
+
 
           }
 
@@ -36,13 +38,13 @@ class Article_controller extends CI_Controller {
                { 
                     var_dump('else');
                     // Enregistrement de l'image
-                    $config['upload_path']          = './assets/uppload';
+                    $config['upload_path']          = './assets/upload';
                     $config['allowed_types']        = 'jpg|png|jpeg';
                     $config['file_name']        = time();
 
                     $this->load->library('upload', $config);
 
-                    if (!$this->upload->do_upload('url_image')) //Erreur dans l'enregistrement 
+                    if (!$this->upload->do_upload('name_img')) //Erreur dans l'enregistrement 
                     {
                          $data['erreur'] = 'erreur dans l\'importation de l\'image';
 
@@ -57,27 +59,29 @@ class Article_controller extends CI_Controller {
                     } else // pas d'erreur
                     {
                          var_dump('pas erreur');
-                         $dataPhoto = array(
-
-                              'url_image' => $this->upload->data('file_name'),
-                              'id_article' => $this->input->post('id_Mark'),
-
-                         );
-                         $this->Photo_model->insert($dataPhoto);
 
                          $data = array( 
                               'title' => $this->input->post('title'),
                               'description_art' => $this->input->post('description_art'),
                               'price' => $this->input->post('price'),
-                              'created_at' => '',
+                              'created_at' => date('Y-m-d H:i:s'),
                               'zipcode' => $this->input->post('zipcode'),
                               'city' => $this->input->post('city'),
                               'phone' => $this->input->post('phone'),
                               'id_user' => $id_vendeur,
-                              'id_category' => $this->input->post('category'),
+                              'id_category' => $this->input->post('id_category'),
                          ); 
                          
                          $this->Article_model->insert($data);
+                         var_dump($this->db->insert_id());
+
+                         $dataPhoto = array(
+
+                              'name_img' => $this->upload->data('file_name'),
+                              'id_article' => $this->db->insert_id(),
+
+                         );
+                         $this->Photo_model->insert($dataPhoto);
                          redirect("user_controller/view_user/");
                     }
 
