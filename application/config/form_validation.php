@@ -1,5 +1,4 @@
 <?php
-var_dump('je suis dans le form validation');
 $config = array ( 
 
     'Article_controller/add_article'  =>  array ( 
