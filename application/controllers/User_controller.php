@@ -40,10 +40,14 @@ class User_controller extends CI_Controller {
                     'password_user' => password_hash($this->input->post('password_user'),PASSWORD_DEFAULT),
                 );
                 $this->user_model->set_user($data);
-                $this->load->view('templates/header', $data);
-                $this->load->view('user/success');
-                $this->load->view('templates/footer');
-            }
+                
+                //////////////////////////
+                // Kevin
+                //////////////////////////
+                $_SESSION['alert'] = '<div class="alert alert-success">Votre compte a bien été créé</div>';
+
+                redirect('home_controller/index', 'refresh');
+                }
         }
 
         public function connection_user_form()
