@@ -34,6 +34,9 @@ class Article_controller extends CI_Controller {
           $data['title']= '';
 
      }
+     public function delete(){
+          
+     }
 
 
 }
