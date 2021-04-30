@@ -16,12 +16,12 @@
 </head>
 
 <body>
-	<div class="container-fluid p-0">
+	<div class="container-fluid p-0 container-main">
 
 		<!-- Barre de menu -->
 
 
-		<nav class="navbar navbar-expand-lg navbar-light bg-light mb-5 shadow sticky-top">
+		<nav class="navbar navbar-expand-lg navbar-light bg-white mb-5 shadow-sm sticky-top">
 			<div class="container">
 				<a class="navbar-brand" href="<?=base_url('index.php/')?>">
 					<img src="<?= base_url('assets/img/logos/logomauvaiscoin.png')?>" width="130" height="20" alt="Logo">
@@ -39,12 +39,12 @@
 									class="far fa-plus-square"></i>
 								Déposer une annonce</button>
 						</li>
-						<form class="form-inline ml-3 my-2 my-lg-0">
+						<!-- <form class="form-inline ml-3 my-2 my-lg-0">
 							<input class="form-control mr-sm-2 form-control-sm" type="search" placeholder="Rechercher"
 								aria-label="Search">
 							<button class="btn btn-outline-success my-2 my-sm-0 btn-sm" type="submit"><i
 									class="fas fa-search"></i></button>
-						</form>
+						</form> -->
 					</ul>
 					<?php if(empty($_SESSION['pseudo'])){  ?>
 					<ul class="navbar-nav">
@@ -55,7 +55,7 @@
 					<?php }else{?>
 						<ul class="navbar-nav">
 							<li class="nav-item">
-								<a class="login-link nav-link " href="<?=base_url('index.php/user_controller/view_user')?>"><img src="<?=base_url('assets/img/user.png')?>" alt=""><?= $_SESSION['pseudo'] ?></a>
+								<a class="login-link nav-link " href="<?=base_url('index.php/user_controller/view_user')?>"><img src="<?=base_url('assets/img/user.png')?>" alt="Avatar"> <?= $_SESSION['pseudo'] ?></a>
 							</li>
 						</ul>
 						
