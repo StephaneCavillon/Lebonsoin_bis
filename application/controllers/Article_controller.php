@@ -138,11 +138,16 @@ class Article_controller extends CI_Controller {
           $this->load->view('templates/footer');
 
      }
-     public function delete($id){
+     public function delete($id = null){
+
+          if(!isset($_SESSION['id'])){
+               redirect('home_controller/index', 'refresh');
+          }else{
      
-          $this->Article_model->delete($id);
-          $_SESSION['alert']= '<div class=" alert alert-success">Votre annonce a bien était supprimée</div>';
-          redirect('user_controller/view_user', 'refresh');
+               $this->Article_model->delete($id);
+               $_SESSION['alert']= '<div class=" alert alert-success">Votre annonce a bien était supprimée</div>';
+               redirect('user_controller/view_user', 'refresh');
+          }
      }
 
 

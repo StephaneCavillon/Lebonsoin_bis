@@ -136,17 +136,23 @@ class User_controller extends CI_Controller {
         }
 
         public function delete(){
-            $id = $_SESSION['id'];
-            $this->user_model->delete($id);
-            $this->session->unset_userdata('pseudo');
-            $this->session->unset_userdata('id');
 
-            //////////////////////////
-            // Kevin
-            //////////////////////////
-            $_SESSION['alert'] = '<div class="alert alert-success">Votre compte a bien été supprimé</div>';
+            
+            if(!isset($_SESSION['id'])){
+                redirect('user_controller/connection_user_form', 'refresh');
+            }else{
+                $id = $_SESSION['id'];
+                $this->user_model->delete($id);
+                $this->session->unset_userdata('pseudo');
+                $this->session->unset_userdata('id');
 
-            redirect('home_controller/index', 'refresh');
+                //////////////////////////
+                // Kevin
+                //////////////////////////
+                $_SESSION['alert'] = '<div class="alert alert-success">Votre compte a bien été supprimé</div>';
+
+                redirect('home_controller/index', 'refresh');
+            }
 
         }
 
