@@ -89,8 +89,13 @@ class User_controller extends CI_Controller {
                 }
 
                 }else{
+                    ///////////////////////////////////////////////////////////////////////////
+                    // KEVIN
+                    ///////////////////////////////////////////////////////////////////////////
 
-                    echo'mail ou mot de passe incorrect';
+                    $_SESSION['alert'] = '<div class="alert alert-danger">Email ou mot de passe incorrect</div>';
+                    redirect('user_controller/connection_user_form', 'refresh');
+                    // echo'mail ou mot de passe incorrect';
                 }
             }
 

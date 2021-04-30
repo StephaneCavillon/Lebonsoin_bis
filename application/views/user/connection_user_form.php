@@ -1,7 +1,14 @@
 <?php echo validation_errors();?>
 
-
 <div class="container">
+
+<?php 
+if (isset($_SESSION['alert'])) {
+	echo $_SESSION['alert'];
+	$_SESSION['alert'] = '';
+}
+?>
+
 	<div class="row mb-5">
 		<div class="mx-auto">
 			<h2 class=" m-auto"><?php echo $title; ?></h2>
